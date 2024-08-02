@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2024/07/30/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%AD%A3%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/1.png">
 <meta property="article:published_time" content="2024-07-30T03:04:26.000Z">
-<meta property="article:modified_time" content="2024-07-31T09:29:38.223Z">
+<meta property="article:modified_time" content="2024-08-02T10:29:37.958Z">
 <meta property="article:author" content="kk">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/2024/07/30/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%AD%A3%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/1.png">
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          259 字
+          901 字
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          3 分钟
+          8 分钟
         
       </span>
     
@@ -311,6 +311,103 @@ org}\)</span>=B相对A移动的向量</p>
 \end{matrix}\right]
 \]</span> (以投影方式表示，Body
 frame的三个向量往世界坐标系的三个轴分别投影)</p>
+<h1 id="旋转矩阵">1-4 旋转矩阵</h1>
+<p>A--world frame, B--body frame</p>
+<ol type="1">
+<li>A相对于B=B相对于A的转置</li>
+</ol>
+<p><span class="math display">\[
+^A_BR=[\hat{^AX_B} ,\hat{^AY_B},\hat{^AZ_B}]\\
+=\left[ \begin{matrix}
+\hat{X_B} \cdot \hat{X_A}&amp;\hat{Y_B} \cdot \hat{X_A}&amp;\hat{Z_B}
+\cdot \hat{X_A}\\
+\hat{X_B} \cdot \hat{Y_A}&amp;\hat{Y_B} \cdot \hat{Y_A}&amp;\hat{Z_B}
+\cdot \hat{Y_A}\\
+\hat{X_B} \cdot \hat{Z_A}&amp;\hat{Y_B} \cdot \hat{Z_A}&amp;\hat{Z_B}
+\cdot \hat{Z_A}
+\end{matrix}\right]\\
+=\left[ \begin{matrix}
+\hat{X_A} \cdot \hat{X_B}&amp;\hat{Y_A} \cdot \hat{X_B}&amp;\hat{Z_A}
+\cdot \hat{X_B}\\
+\hat{X_A} \cdot \hat{Y_B}&amp;\hat{Y_A} \cdot \hat{Y_B}&amp;\hat{Z_A}
+\cdot \hat{Y_B}\\
+\hat{X_A} \cdot \hat{Z_B}&amp;\hat{Y_A} \cdot \hat{Z_B}&amp;\hat{Z_A}
+\cdot \hat{Z_B}
+\end{matrix}\right]\\
+=\left[ \begin{matrix}\hat{^BX_A}
+\\\hat{^BY_A}\\\hat{^BZ_A}\end{matrix}\right]=^B_AR^T
+\]</span></p>
+<ol start="2" type="1">
+<li><span class="math inline">\(^A_BR^T \ ^A_BR=E_3\)</span></li>
+</ol>
+<p>​ <span class="math inline">\(^A_BR^T=^A_BR^{-1}\)</span>
+用于计算旋转矩阵的逆矩阵</p>
+<p>​ （旋转矩阵是正交矩阵，<span
+class="math inline">\(QQ^T=Q^TQ=I,Q^{-1}=Q^T\)</span>）</p>
+<ol start="3" type="1">
+<li>坐标系之间的坐标变换：<span class="math inline">\(^AP=^A_BR\ \
+^BP\)</span></li>
+</ol>
+<p>​ P在A坐标系的坐标=P在B坐标系的坐标 左乘 B相对于A的旋转矩阵</p>
+<ol start="4" type="1">
+<li>描述转动状态</li>
+</ol>
+<ul>
+<li><p>绕<span class="math inline">\(z\)</span>轴逆时针旋转<span
+class="math inline">\(\theta\)</span>角<span
+class="math inline">\(R_{Z_A}(\theta)=\left[\begin{matrix}c\theta&amp;-s\theta&amp;0\\s\theta&amp;c\theta&amp;0\\0&amp;0&amp;1\\\end{matrix}\right]\)</span></p></li>
+<li><p>绕<span class="math inline">\(x\)</span>轴逆时针旋转<span
+class="math inline">\(\theta\)</span>角<span
+class="math inline">\(R_{X_A}(\theta)=\left[\begin{matrix}1&amp;0&amp;0\\0&amp;c\theta&amp;-s\theta\\0&amp;s\theta&amp;c\theta\\\end{matrix}\right]\)</span></p></li>
+<li><p>绕<span class="math inline">\(y\)</span>轴逆时针旋转<span
+class="math inline">\(\theta\)</span>角<span
+class="math inline">\(R_{Y_A}(\theta)=\left[\begin{matrix}c\theta&amp;0&amp;s\theta\\0&amp;1&amp;0\\-s\theta&amp;0&amp;c\theta\\\end{matrix}\right]\)</span></p></li>
+</ul>
+<h1 id="旋转矩阵与转角">2-1 旋转矩阵与转角</h1>
+<ol type="1">
+<li>旋转顺序不可互换，多次旋转的先后顺序需要明确定义，旋转转轴也需要明确定义</li>
+<li>拆解方式</li>
+</ol>
+<ul>
+<li>空间中固定轴xyz：Fixed angles</li>
+<li>转动物体上的坐标系:Euler angles</li>
+</ul>
+<h1 id="fixed-angles">2-2 Fixed angles</h1>
+<ol type="1">
+<li><p><span
+class="math inline">\(X_A,Y_A,Z_A\)</span>固定不动，转动<span
+class="math inline">\(X_B,Y_B,Z_B\)</span>。转动针对<span
+class="math inline">\(X_A,Y_A,Z_A\)</span></p></li>
+<li><p>公式：<span
+class="math inline">\(^A_BR_{XYZ}(\gamma,\beta,\alpha)=R_Z(\alpha)R_Y(\beta)R_X(\gamma)\)</span></p></li>
+</ol>
+<p>​
+先转的在后面，后转的在前面，相当于按顺序一个一个左乘（绕固定轴情况下）。</p>
+<ol start="3" type="1">
+<li>反推：从已知旋转矩阵 推 绕XYZ的旋转矩阵</li>
+</ol>
+<p><span class="math display">\[
+^A_BR_{XYZ}(\gamma,\beta,\alpha)=\left[\begin{matrix}
+c\alpha c\beta&amp;c\alpha s\beta s\gamma - s\alpha c\gamma&amp;c\alpha
+s\beta c\gamma+s\alpha s\gamma\\
+s\alpha c\beta&amp;s\alpha s\beta s\gamma + c \alpha c
+\gamma&amp;s\alpha s\beta c \gamma-c \alpha s \gamma\\
+-s \beta&amp;c\beta s\gamma&amp;c\beta c\gamma
+\end{matrix}\right]
+=\left[\begin{matrix}
+r_{11}&amp;r_{12}&amp;r_{13}\\
+r_{21}&amp;r_{22}&amp;r_{23}\\
+r_{31}&amp;r_{32}&amp;r_{33}\end{matrix}\right]
+\]</span></p>
+<p><span class="math display">\[
+if \beta \neq 90°\\
+\beta=Atan2(-r_{31},\sqrt{r_{11}^2+r_{21}^2})\\
+\alpha=Atan2(r_{21}/c\beta,r_11/c\beta)\ \ \ \ \ \ \ -90\leq\beta\leq90
+\\
+\gamma=Atan2(r_{32}/c\beta,r_{33}/c\beta)
+\]</span></p>
+<p>atan2对象限敏感，<span
+class="math inline">\(atan2(y,x)=atan(y/x)\)</span>，第三象限结果+π</p>
 
                 
               </div>
