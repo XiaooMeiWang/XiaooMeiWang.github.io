@@ -8,7 +8,7 @@
     <link href="/2024/11/13/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA/"/>
     <url>/2024/11/13/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA/</url>
     
-    <content type="html"><![CDATA[<h1 id="密码学的基本概念">2.1 密码学的基本概念</h1><ul><li>明文（plaintext）：被用来加密的消息</li><li>密文</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="密码学的基本概念">2.1 密码学的基本概念</h1><ul><li><p>明文（plaintext）：被用来加密的消息</p></li><li><p>密文</p></li><li><p>加密</p></li><li><p>解密</p></li><li><p>密钥：变换函数所用的一个控制参数</p></li><li><p>加密密钥：</p></li><li><p>解密密钥：</p></li></ul>]]></content>
     
     
     
