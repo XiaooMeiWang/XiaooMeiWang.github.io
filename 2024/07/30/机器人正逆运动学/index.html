@@ -44,7 +44,7 @@
 <meta property="og:image" content="https://xiaoomeiwang.github.io/2024/07/30/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%AD%A3%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/19.png">
 <meta property="og:image" content="https://xiaoomeiwang.github.io/2024/07/30/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%AD%A3%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/20.png">
 <meta property="article:published_time" content="2024-07-30T03:04:26.000Z">
-<meta property="article:modified_time" content="2024-08-13T07:57:41.272Z">
+<meta property="article:modified_time" content="2024-08-15T08:34:57.794Z">
 <meta property="article:author" content="kk">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://xiaoomeiwang.github.io/2024/07/30/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%AD%A3%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/1.png">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.4k 字
+          2.5k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          20 分钟
+          22 分钟
         
       </span>
     
@@ -655,8 +655,44 @@ src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-2024
 alt="image-20240813111220803" />
 <figcaption aria-hidden="true">image-20240813111220803</figcaption>
 </figure>
-<ol start="2" type="1">
-<li></li>
+<p>例：轮式机器人/足式机器人</p>
+<h2 id="dh表达法小结">3-7 DH表达法小结</h2>
+<p>表达法1：</p>
+<ul>
+<li><p>按从上到下的顺序进行变换</p></li>
+<li><p>前两个用i-1，后两个用i+1</p></li>
+<li><p>link i 在axis i的前方</p></li>
+</ul>
+<figure>
+<img
+src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240814111625429.png" srcset="/img/loading.gif" lazyload
+alt="image-20240814111625429" />
+<figcaption aria-hidden="true">image-20240814111625429</figcaption>
+</figure>
+<p>表达法2：</p>
+<ul>
+<li>link i 在joint i 前方</li>
+<li>使用的量一致，全部属于i，更直观</li>
+</ul>
+<figure>
+<img
+src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240814111638815.png" srcset="/img/loading.gif" lazyload
+alt="image-20240814111638815" />
+<figcaption aria-hidden="true">image-20240814111638815</figcaption>
+</figure>
+<p>旋转矩阵表达式：</p>
+<p><img
+src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240815142822070.png" srcset="/img/loading.gif" lazyload /></p>
+<h1 id="逆向运动学">4.逆向运动学</h1>
+<h2 id="逆向运动学导论">4-1 逆向运动学导论</h2>
+<ol type="1">
+<li><p>已知<span class="math inline">\(\{H\}\)</span>或<span
+class="math inline">\(^wP\)</span>，反算所有关节的<span
+class="math inline">\(\theta_i\)</span></p></li>
+<li><p>Reachable workspace: 手臂可以用一种以上姿态到达的位置</p></li>
+<li><p>dexterous
+workspace:手臂可以用任何的姿态到达的位置（是rw的子集）</p></li>
+<li><p>subspace：手臂在定义头尾的T所能到达的变动范围</p></li>
 </ol>
 
                 
@@ -719,6 +755,12 @@ alt="image-20240813111220803" />
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/11/13/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA/" title="信息安全导论">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">信息安全导论</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
