@@ -8,7 +8,7 @@
     <link href="/2024/11/13/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA/"/>
     <url>/2024/11/13/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA/</url>
     
-    <content type="html"><![CDATA[<h1 id="密码学的基本概念">2.1 密码学的基本概念</h1><ul><li><p>明文（plaintext）：被用来加密的消息</p></li><li><p>密文</p></li><li><p>加密</p></li><li><p>解密</p></li><li><p>密钥：变换函数所用的一个控制参数</p></li><li><p>加密密钥：</p></li><li><p>解密密钥：</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="密码学的基本概念">2.1 密码学的基本概念</h1><ol type="1"><li>概念</li></ol><ul><li>明文（plaintext）：被用来加密的消息</li><li>密文</li><li>加密</li><li>解密</li></ul><ol start="2" type="1"><li>密钥</li></ol><ul><li>密钥：变换函数所用的一个控制参数</li><li>加密密钥：</li><li>解密密钥：</li></ul><ol start="3" type="1"><li>加解密过程</li></ol><ul><li>加解密过程：</li></ul><ol start="4" type="1"><li>密钥分类：</li></ol><ul><li>基本密钥</li><li>会话密钥</li><li>密钥加密密钥</li><li>主密钥</li></ul><ol start="5" type="1"><li>古典密码体制</li></ol><ul><li><p>凯撒密码：统一移动<spanclass="math inline">\(n\)</span>个位置</p></li><li><p>ENIGMA加密机</p></li><li><p>......</p></li></ul>]]></content>
     
     
     
