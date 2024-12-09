@@ -4,6 +4,81 @@
   
   
   <entry>
+    <title>SRTP相关</title>
+    <link href="/2024/12/09/SRTP%E7%9B%B8%E5%85%B3/"/>
+    <url>/2024/12/09/SRTP%E7%9B%B8%E5%85%B3/</url>
+    
+    <content type="html"><![CDATA[<p>进度跟进用，星期五前完成记录</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>科研</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>SRTP</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>DCS学习</title>
+    <link href="/2024/12/09/DCS%E5%AD%A6%E4%B9%A0/"/>
+    <url>/2024/12/09/DCS%E5%AD%A6%E4%B9%A0/</url>
+    
+    <content type="html"><![CDATA[<p>预期内容为：</p><ul><li>hollysys使用方法：包括状态切换、变量读写等</li><li>协议分析、上位机软件分析方法</li><li>x86汇编、IDA、ollydebug</li><li>进程监督工具 process monitor</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>竞赛</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>启真问学 工业控制器</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>密码学学习笔记</title>
+    <link href="/2024/12/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <url>/2024/12/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<p>督促自己学习，持续更新...</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>竞赛</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>启真问学 密码学</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>机器人正逆运动学</title>
     <link href="/2024/07/30/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%AD%A3%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/"/>
     <url>/2024/07/30/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%AD%A3%E9%80%86%E8%BF%90%E5%8A%A8%E5%AD%A6/</url>
