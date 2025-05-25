@@ -862,7 +862,7 @@ workspace:手臂可以用任何的姿态到达的位置（是rw的子集）</p><
             path: window.location.pathname
           }
         )
-        new Valine(options);
+
         // 自定义 Gravatar 源为 cravatar.cn，并保留用户配置的 avatar 样式
         if (typeof options.avatar === 'string') {
             var defaultAvatarStyle = options.avatar;
@@ -873,6 +873,9 @@ workspace:手臂可以用任何的姿态到达的位置（是rw的子集）</p><
         options.avatar = function(emailHash) {
             return 'https://cravatar.cn/avatar/ ' + emailHash + '?s=64&d=' + defaultAvatarStyle;
         };
+        
+        new Valine(options);
+        
         Fluid.utils.waitElementVisible('#valine .vcontent', () => {
           var imgSelector = '#valine .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);

@@ -467,7 +467,7 @@ attack</h3>
             path: window.location.pathname
           }
         )
-        new Valine(options);
+
         // 自定义 Gravatar 源为 cravatar.cn，并保留用户配置的 avatar 样式
         if (typeof options.avatar === 'string') {
             var defaultAvatarStyle = options.avatar;
@@ -478,6 +478,9 @@ attack</h3>
         options.avatar = function(emailHash) {
             return 'https://cravatar.cn/avatar/ ' + emailHash + '?s=64&d=' + defaultAvatarStyle;
         };
+        
+        new Valine(options);
+        
         Fluid.utils.waitElementVisible('#valine .vcontent', () => {
           var imgSelector = '#valine .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);
