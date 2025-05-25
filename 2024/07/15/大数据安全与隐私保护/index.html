@@ -467,20 +467,14 @@ attack</h3>
             path: window.location.pathname
           }
         )
-
-        // 自定义 Gravatar 源为 cravatar.cn，并保留用户配置的 avatar 样式
-        if (typeof options.avatar === 'string') {
-            var defaultAvatarStyle = options.avatar;
-        } else {
-            var defaultAvatarStyle = 'mp'; // 默认值
-        }
-
-        options.avatar = function(emailHash) {
-            return 'https://cravatar.cn/avatar/ ' + emailHash + '?s=64&d=' + defaultAvatarStyle;
-        };
         
         new Valine(options);
-        
+        // 替换所有 Gravatar 头像链接为 cravatar.cn
+        document.querySelectorAll('#valine .vimg').forEach(function(img) {
+        if (img.src.includes('gravatar.loli.net')) {
+            img.src = img.src.replace('gravatar.loli.net', 'cravatar.cn');
+        }
+        });
         Fluid.utils.waitElementVisible('#valine .vcontent', () => {
           var imgSelector = '#valine .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);
