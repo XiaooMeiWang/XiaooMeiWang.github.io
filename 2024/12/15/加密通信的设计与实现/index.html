@@ -16,15 +16,15 @@
   <meta name="author" content="kk">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.双方通信时，信息的保密是十分重要的，请编写代码（语言不限）实现Alice与Bob之间的加密通信，至少使用一种非对称加密算法，主要包括发送数据与接收数据的过程，具体有以下要求：  Alice发送给Bob一条信息message，但通讯信道可能被中间人Charlie窃听，你实现的通信需要保证message只有Alice与Bob知道明文内容，Charlie即使窃取到了信息也无法知道明文内容。 C">
+    <meta name="description" content="加密通信的设计与实现 1.双方通信时，信息的保密是十分重要的，请编写代码（语言不限）实现Alice与Bob之间的加密通信，至少使用一种非对称加密算法，主要包括发送数据与接收数据的过程，具体有以下要求：  Alice发送给Bob一条信息message，但通讯信道可能被中间人Charlie窃听，你实现的通信需要保证message只有Alice与Bob知道明文内容，Charlie即使窃取到了信息也">
 <meta property="og:type" content="article">
 <meta property="og:title" content="加密通信的设计与实现">
 <meta property="og:url" content="https://xiaoomeiwang.github.io/2024/12/15/%E5%8A%A0%E5%AF%86%E9%80%9A%E4%BF%A1%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.双方通信时，信息的保密是十分重要的，请编写代码（语言不限）实现Alice与Bob之间的加密通信，至少使用一种非对称加密算法，主要包括发送数据与接收数据的过程，具体有以下要求：  Alice发送给Bob一条信息message，但通讯信道可能被中间人Charlie窃听，你实现的通信需要保证message只有Alice与Bob知道明文内容，Charlie即使窃取到了信息也无法知道明文内容。 C">
+<meta property="og:description" content="加密通信的设计与实现 1.双方通信时，信息的保密是十分重要的，请编写代码（语言不限）实现Alice与Bob之间的加密通信，至少使用一种非对称加密算法，主要包括发送数据与接收数据的过程，具体有以下要求：  Alice发送给Bob一条信息message，但通讯信道可能被中间人Charlie窃听，你实现的通信需要保证message只有Alice与Bob知道明文内容，Charlie即使窃取到了信息也">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-12-15T11:30:35.000Z">
-<meta property="article:modified_time" content="2024-12-15T14:43:10.972Z">
+<meta property="article:modified_time" content="2024-12-29T08:51:31.337Z">
 <meta property="article:author" content="kk">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -248,7 +248,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          491 字
+          587 字
         
       </span>
     
@@ -309,7 +309,8 @@
             
               <div class="markdown-body">
                 
-                <p>1.双方通信时，信息的保密是十分重要的，请编写代码（语言不限）实现Alice与Bob之间的加密通信，至少使用一种非对称加密算法，主要包括发送数据与接收数据的过程，具体有以下要求：</p>
+                <h1 id="加密通信的设计与实现">加密通信的设计与实现</h1>
+<p>1.双方通信时，信息的保密是十分重要的，请编写代码（语言不限）实现Alice与Bob之间的加密通信，至少使用一种非对称加密算法，主要包括发送数据与接收数据的过程，具体有以下要求：</p>
 <ul>
 <li>Alice发送给Bob一条信息message，但通讯信道可能被中间人Charlie窃听，你实现的通信需要保证message只有Alice与Bob知道明文内容，Charlie即使窃取到了信息也无法知道明文内容。</li>
 <li>Charlie窃取信息后可能发送伪造的信息给Bob，你需要保证Bob收到信息后能判断该信息是否是Alice发送过来的。</li>
@@ -328,6 +329,53 @@
 <li>正常通讯：Alice使用chacha20加密明文，使用Bob的公钥加密密钥，生成nonce，根据密钥、明文、nonce生成hmac（确保完整性），用自己的私钥对消息和nonce的组合进行签名。Bob接收信息后，用私钥解密出密钥，用密钥解密出明文，再根据密钥、明文、nonce生成hmac检查是否被篡改，最后用alice的公钥验证签名</li>
 <li>存在中间人窃听：Alice的信息被Charlie窃听，Charlie按照Alice的流程发送新的信息给Bob，但是没有Alice的数字签名。Bob收到信息后经验证发现消息并不是由Alice发出的。</li>
 </ul>
+<p>验证通讯的安全性：</p>
+<p>原代码中，RSA原本为2048位的密钥，而2048位目前认为是不可破解的</p>
+<p>尝试改为1024位（更低的位数代码不允许），暴力破解时间还是过长</p>
+<p>直接编写代码暴力破解RSA</p>
+<table>
+<thead>
+<tr>
+<th>长度</th>
+<th>时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>32</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>36</td>
+<td>0.02</td>
+</tr>
+<tr>
+<td>48</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>56</td>
+<td>10.78</td>
+</tr>
+<tr>
+<td>60</td>
+<td>29.71</td>
+</tr>
+<tr>
+<td>62</td>
+<td>99.10</td>
+</tr>
+<tr>
+<td>64</td>
+<td>286.36</td>
+</tr>
+<tr>
+<td>68</td>
+<td>??</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(y=0.0000*e^{0.5378x}\)</span></p>
 
                 
               </div>
@@ -415,7 +463,7 @@
     Fluid.utils.loadComments('#valine', function() {
       Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
         var options = Object.assign(
-          {"appId":"JAM6S6aPy0jmkkbmuzuCK5zo-MdYXbMMI","appKey":"VMiB6FoGnCjYL2yg7xuRtWMY","path":"window.location.pathname","placeholder":"来说两句吧~","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://JAM6S6aP.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {"appId":"JAM6S6aPy0jmkkbmuzuCK5zo-MdYXbMMI","appKey":"VMiB6FoGnCjYL2yg7xuRtWMY","path":"window.location.pathname","placeholder":"来说两句吧~","avatar":"mp","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://JAM6S6aP.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
           {
             el: "#valine",
             path: window.location.pathname

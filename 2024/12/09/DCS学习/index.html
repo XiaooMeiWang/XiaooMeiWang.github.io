@@ -16,19 +16,23 @@
   <meta name="author" content="kk">
   <meta name="keywords" content="">
   
-    <meta name="description" content="预期内容为：  hollysys使用方法：包括状态切换、变量读写等 协议分析、上位机软件分析方法 x86汇编、IDA、ollydebug 进程监督工具 process monitor">
+    <meta name="description" content="预期内容为：  hollysys使用方法：包括状态切换、变量读写等 协议分析、上位机软件分析方法 x86汇编、IDA、ollydebug 进程监督工具 process monitor  一、DCS基础 1.概念  DCS 集散控制系统：分散控制、集中操作、综合管理、分而治之 分层体系：直接控制层（PLC、DCS）-&gt;操作监控层-&gt;生产管基层-&gt;决策管理层">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DCS学习">
 <meta property="og:url" content="https://xiaoomeiwang.github.io/2024/12/09/DCS%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="预期内容为：  hollysys使用方法：包括状态切换、变量读写等 协议分析、上位机软件分析方法 x86汇编、IDA、ollydebug 进程监督工具 process monitor">
+<meta property="og:description" content="预期内容为：  hollysys使用方法：包括状态切换、变量读写等 协议分析、上位机软件分析方法 x86汇编、IDA、ollydebug 进程监督工具 process monitor  一、DCS基础 1.概念  DCS 集散控制系统：分散控制、集中操作、综合管理、分而治之 分层体系：直接控制层（PLC、DCS）-&gt;操作监控层-&gt;生产管基层-&gt;决策管理层">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xiaoomeiwang.github.io/2024/12/09/DCS%E5%AD%A6%E4%B9%A0/DCS%E5%AD%A6%E4%B9%A0/image-20250116084912051.png">
+<meta property="og:image" content="https://xiaoomeiwang.github.io/2024/12/09/DCS%E5%AD%A6%E4%B9%A0/DCS%E5%AD%A6%E4%B9%A0/image-20250116085015888.png">
+<meta property="og:image" content="https://xiaoomeiwang.github.io/2024/12/09/DCS%E5%AD%A6%E4%B9%A0/DCS%E5%AD%A6%E4%B9%A0/image-20250116084508965.png">
 <meta property="article:published_time" content="2024-12-09T13:56:20.000Z">
-<meta property="article:modified_time" content="2024-12-10T00:49:08.936Z">
+<meta property="article:modified_time" content="2025-02-05T15:26:28.812Z">
 <meta property="article:author" content="kk">
 <meta property="article:tag" content="启真问学">
 <meta property="article:tag" content="DCS">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://xiaoomeiwang.github.io/2024/12/09/DCS%E5%AD%A6%E4%B9%A0/DCS%E5%AD%A6%E4%B9%A0/image-20250116084912051.png">
   
   
   
@@ -250,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          45 字
+          680 字
         
       </span>
     
@@ -261,7 +265,7 @@
         
         
         
-          1 分钟
+          6 分钟
         
       </span>
     
@@ -318,6 +322,76 @@
 <li>x86汇编、IDA、ollydebug</li>
 <li>进程监督工具 process monitor</li>
 </ul>
+<h1 id="一dcs基础">一、DCS基础</h1>
+<h2 id="概念">1.概念</h2>
+<ol type="1">
+<li><p>DCS 集散控制系统：分散控制、集中操作、综合管理、分而治之</p></li>
+<li><p>分层体系：直接控制层（PLC、DCS）-&gt;操作监控层-&gt;生产管基层-&gt;决策管理层</p></li>
+<li><p>硬件结构：积木式，控制站、操作员站、工程师站</p>
+<p>控制站：控制器（DPU，运行控制逻辑）+IO模块（信息传递）</p>
+<ol type="1">
+<li>控制周期：250ms或500ms，最短控制周期有主芯片速度、程序量和通讯量等决定，负荷率不超过40%，最高应小于70%</li>
+<li>DI/DO/AI/AO/TC/RTD/AO等输入输出单元</li>
+<li>SOE模块：带时间标志的DI信号，主要用于事故分析，可以达到毫秒级的分辨率</li>
+</ol>
+<p>操作员站：工艺操作员对生产过程进行监视、操作和管理</p>
+<p>工程师站：</p></li>
+<li><p>组态软件</p>
+<p>硬件组态：控制器插的卡和实际的对应上</p>
+<p>软件组态：</p>
+<ol type="1">
+<li>画面组态：画操作员看的画面</li>
+<li>逻辑组态：FBD、ST等</li>
+</ol>
+<p>SAMA图：控制逻辑</p>
+<p>查看趋势、报警</p>
+<p>OPC技术：软件与软件之间通讯</p></li>
+<li><p>可靠性：MTTF等</p></li>
+<li><p>接地：屏蔽地、保护地、操作员站保护地接到一起</p></li>
+<li><p>冗余：硬件冗余、软件冗余、信息冗余、时间冗余，模块冗余，保持可靠性，无扰动切换</p>
+<p>控制器冗余：一段中，两个控制器同时运行，一个主一个从</p>
+<p>通信冗余：总线通信线路冗余</p>
+<p>电源冗余：两路供电，双输入电源模块</p></li>
+</ol>
+<h1 id="二st语言">二、ST语言</h1>
+<ol type="1">
+<li><p>表达式：操作符+操作数</p>
+<p>操作符：<code>+</code> <code>-</code> <code>*</code> <code>/</code>
+<code>MOD（取余）</code> <code>&lt;</code> <code>&gt;</code>
+<code>&lt;=</code> <code>&gt;=</code> <code>&lt;&gt;（不等于）</code>
+<code>NOT（取反）</code> <code>AND（相与）</code>
+<code>XOR（相异或）</code> <code>OR（或）</code> <code>:=（赋值）</code>
+<code>^(取内容，针对指针)</code> <code>-（取负数）</code>
+<code>() 括号，更改运算次序</code> <code>FUNCTION  函数调用</code></p>
+<p>优先级（从高到低，同级从左往右）：括号，功能或功能块调用，取内容（^)，取负数/取反，乘除取余，加减，比较，等于/不等于，位与，位异或，位或，赋值</p></li>
+<li><p>功能块FB（function block） 、函数FNC 、程序段PRG</p></li>
+</ol>
+<h2 id="三modbus">三、MODBUS</h2>
+<p>一种串行通讯协议。</p>
+<p>主从方式通信，总线上每次只有一个数据传输，主机发送，从机应答</p>
+<p>寄存器：</p>
+<figure>
+<img src="DCS学习/image-20250116084912051.png" srcset="/img/loading.gif" lazyload
+alt="image-20250116084912051" />
+<figcaption aria-hidden="true">image-20250116084912051</figcaption>
+</figure>
+<p>地址分配：</p>
+<figure>
+<img src="DCS学习/image-20250116085015888.png" srcset="/img/loading.gif" lazyload
+alt="image-20250116085015888" />
+<figcaption aria-hidden="true">image-20250116085015888</figcaption>
+</figure>
+<p>modbus帧结构：地址+功能码+数据+校验位</p>
+<p>地址：一个字节 0-255，有效范围1-247；</p>
+<p>功能码：一个字节</p>
+<figure>
+<img src="DCS学习/image-20250116084508965.png" srcset="/img/loading.gif" lazyload
+alt="image-20250116084508965" />
+<figcaption aria-hidden="true">image-20250116084508965</figcaption>
+</figure>
+<p>数据：起始地址（高八位+低八位） 数量（高八位+低八位）</p>
+<p>校验码：用于校验信息传输过程是否出错</p>
+<p>例子：0x03 0x01 0x00 0x13 0x00 0x1B XX XX</p>
 
                 
               </div>
@@ -441,7 +515,7 @@
     Fluid.utils.loadComments('#valine', function() {
       Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
         var options = Object.assign(
-          {"appId":"JAM6S6aPy0jmkkbmuzuCK5zo-MdYXbMMI","appKey":"VMiB6FoGnCjYL2yg7xuRtWMY","path":"window.location.pathname","placeholder":"来说两句吧~","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://JAM6S6aP.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {"appId":"JAM6S6aPy0jmkkbmuzuCK5zo-MdYXbMMI","appKey":"VMiB6FoGnCjYL2yg7xuRtWMY","path":"window.location.pathname","placeholder":"来说两句吧~","avatar":"mp","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://JAM6S6aP.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
           {
             el: "#valine",
             path: window.location.pathname
