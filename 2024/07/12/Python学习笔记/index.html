@@ -1406,14 +1406,36 @@ Web应用程序开发和网络爬虫</h3>
         )
         new Valine(options);
 
-        // 确保 DOM 已加载后再执行替换
-        document.addEventListener('DOMContentLoaded', function () {
-          document.querySelectorAll('#valine .vimg').forEach(function (img) {
-            // 去除多余的转义字符和空格
-            img.src = img.src.replace(/(&amp;|#38;)/g, '&');
-            img.src = img.src.replace(/(gravatar\.loli\.net|gravatar\.dnspod\.org)/gi, 'cravatar.cn');
+        // 使用 MutationObserver 监听 DOM 变化
+        function fixGravatar(imgElement) {
+          if (!imgElement) return;
+          imgElement.src = imgElement.src
+            .replace(/(&amp;|#38;)/g, '&')
+            .replace(/(gravatar\.loli\.net|gravatar\.dnspod\.org)/gi, 'cravatar.cn');
+        }
+
+        function observeDOM() {
+          const targetNode = document.getElementById('valine');
+          const config = { childList: true, subtree: true };
+
+          const observer = new MutationObserver(function(mutationsList) {
+            for (let mutation of mutationsList) {
+              if (mutation.type === 'childList') {
+                mutation.addedNodes.forEach(node => {
+                  if (node.nodeType === Node.ELEMENT_NODE && node.matches('.vimg')) {
+                    fixGravatar(node);
+                  } else {
+                    Array.from(node.querySelectorAll('.vimg')).forEach(fixGravatar);
+                  }
+                });
+              }
+            }
           });
-        });
+
+          observer.observe(targetNode, config);
+        }
+
+        observeDOM();
 
 
 
