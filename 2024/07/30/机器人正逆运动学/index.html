@@ -863,6 +863,9 @@ workspace:手臂可以用任何的姿态到达的位置（是rw的子集）</p><
           }
         )
         new Valine(options);
+        document.querySelectorAll('#valine .vimg').forEach(function(img) {
+          img.src = img.src.replace(/(gravatar\.loli\.net|gravatar\.dnspod\.org)/, 'cravatar.cn');
+        });
         Fluid.utils.waitElementVisible('#valine .vcontent', () => {
           var imgSelector = '#valine .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);

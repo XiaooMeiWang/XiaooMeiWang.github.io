@@ -1405,6 +1405,9 @@ Web应用程序开发和网络爬虫</h3>
           }
         )
         new Valine(options);
+        document.querySelectorAll('#valine .vimg').forEach(function(img) {
+          img.src = img.src.replace(/(gravatar\.loli\.net|gravatar\.dnspod\.org)/, 'cravatar.cn');
+        });
         Fluid.utils.waitElementVisible('#valine .vcontent', () => {
           var imgSelector = '#valine .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);

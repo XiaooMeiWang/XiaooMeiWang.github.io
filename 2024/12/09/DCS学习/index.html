@@ -522,6 +522,9 @@ alt="image-20250116084508965" />
           }
         )
         new Valine(options);
+        document.querySelectorAll('#valine .vimg').forEach(function(img) {
+          img.src = img.src.replace(/(gravatar\.loli\.net|gravatar\.dnspod\.org)/, 'cravatar.cn');
+        });
         Fluid.utils.waitElementVisible('#valine .vcontent', () => {
           var imgSelector = '#valine .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);
