@@ -442,9 +442,19 @@
           }
         )
         new Valine(options);
-        document.querySelectorAll('#valine .vimg').forEach(function(img) {
-          img.src = img.src.replace(/(gravatar\.loli\.net|gravatar\.dnspod\.org)/, 'cravatar.cn');
+
+        // 确保 DOM 已加载后再执行替换
+        document.addEventListener('DOMContentLoaded', function () {
+          document.querySelectorAll('#valine .vimg').forEach(function (img) {
+            // 去除多余的转义字符和空格
+            img.src = img.src.replace(/(&amp;|#38;)/g, '&');
+            img.src = img.src.replace(/(gravatar\.loli\.net|gravatar\.dnspod\.org)/gi, 'cravatar.cn');
+          });
         });
+
+
+
+
         Fluid.utils.waitElementVisible('#valine .vcontent', () => {
           var imgSelector = '#valine .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);
