@@ -16,21 +16,22 @@
   <meta name="author" content="kk">
   <meta name="keywords" content="">
   
-    <meta name="description" content="加密通信的设计与实现 1.双方通信时，信息的保密是十分重要的，请编写代码（语言不限）实现Alice与Bob之间的加密通信，至少使用一种非对称加密算法，主要包括发送数据与接收数据的过程，具体有以下要求：  Alice发送给Bob一条信息message，但通讯信道可能被中间人Charlie窃听，你实现的通信需要保证message只有Alice与Bob知道明文内容，Charlie即使窃取到了信息也">
+    <meta name="description" content="2025.5.27开始整理，按照教材顺序，包括现控。主要写知识框架、例题、以及自己对其的理解 思路：导论 - 数学模型 - 时域响应 - 稳定性概念&#x2F;判断（根轨迹） - 频域响应 从第四章开始 第一章 控制系统概论 导论内容，后续补充 第二章 连续时间控制系统的数学模型 第三章 连续时间控制系统的时域分析 第四章 连续时间控制系统的稳定性与稳态误差 第五章 根轨迹方法 第">
 <meta property="og:type" content="article">
-<meta property="og:title" content="加密通信的设计与实现">
-<meta property="og:url" content="https://xiaoomeiwang.github.io/2024/12/15/%E5%8A%A0%E5%AF%86%E9%80%9A%E4%BF%A1%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/index.html">
+<meta property="og:title" content="《自动控制原理》复习笔记">
+<meta property="og:url" content="https://xiaoomeiwang.github.io/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="加密通信的设计与实现 1.双方通信时，信息的保密是十分重要的，请编写代码（语言不限）实现Alice与Bob之间的加密通信，至少使用一种非对称加密算法，主要包括发送数据与接收数据的过程，具体有以下要求：  Alice发送给Bob一条信息message，但通讯信道可能被中间人Charlie窃听，你实现的通信需要保证message只有Alice与Bob知道明文内容，Charlie即使窃取到了信息也">
+<meta property="og:description" content="2025.5.27开始整理，按照教材顺序，包括现控。主要写知识框架、例题、以及自己对其的理解 思路：导论 - 数学模型 - 时域响应 - 稳定性概念&#x2F;判断（根轨迹） - 频域响应 从第四章开始 第一章 控制系统概论 导论内容，后续补充 第二章 连续时间控制系统的数学模型 第三章 连续时间控制系统的时域分析 第四章 连续时间控制系统的稳定性与稳态误差 第五章 根轨迹方法 第">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-12-15T11:30:35.000Z">
-<meta property="article:modified_time" content="2024-12-29T08:51:31.337Z">
+<meta property="article:published_time" content="2025-05-26T06:44:17.000Z">
+<meta property="article:modified_time" content="2025-05-27T06:16:12.765Z">
 <meta property="article:author" content="kk">
+<meta property="article:tag" content="复习笔记">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>加密通信的设计与实现 - Hexo</title>
+  <title>《自动控制原理》复习笔记 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -225,7 +226,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="加密通信的设计与实现"></span>
+            <span id="subtitle" data-typed-text="《自动控制原理》复习笔记"></span>
           
         </div>
 
@@ -236,8 +237,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-15 19:30" pubdate>
-          2024年12月15日 晚上
+        <time datetime="2025-05-26 14:44" pubdate>
+          2025年5月26日 下午
         </time>
       </span>
     
@@ -248,7 +249,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          587 字
+          154 字
         
       </span>
     
@@ -259,7 +260,7 @@
         
         
         
-          5 分钟
+          2 分钟
         
       </span>
     
@@ -304,78 +305,25 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">加密通信的设计与实现</h1>
+            <h1 id="seo-header">《自动控制原理》复习笔记</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="加密通信的设计与实现">加密通信的设计与实现</h1>
-<p>1.双方通信时，信息的保密是十分重要的，请编写代码（语言不限）实现Alice与Bob之间的加密通信，至少使用一种非对称加密算法，主要包括发送数据与接收数据的过程，具体有以下要求：</p>
-<ul>
-<li>Alice发送给Bob一条信息message，但通讯信道可能被中间人Charlie窃听，你实现的通信需要保证message只有Alice与Bob知道明文内容，Charlie即使窃取到了信息也无法知道明文内容。</li>
-<li>Charlie窃取信息后可能发送伪造的信息给Bob，你需要保证Bob收到信息后能判断该信息是否是Alice发送过来的。</li>
-<li>尽可能快的实现通信，尽量减少加解密过程所花费的时间，需要多种加密结合。</li>
-</ul>
-<p>基本思路：</p>
-<ul>
-<li>只有Alice和Bob知道明文内容：采用非对称加密，Alice用Bob的公钥加密信息，只有Bob能用私钥解密信息</li>
-<li>判断信息是Alice发送来的：Alice使用数字签名</li>
-<li>尽可能快的实现通信：用对称加密来加密明文，再用非对称加密来加密对称加密的密钥（因为非对称加密对于长文本往往更慢）</li>
-</ul>
-<p>对称加密：chacha20</p>
-<p>非对称加密：RSA</p>
-<p>流程：</p>
-<ul>
-<li>正常通讯：Alice使用chacha20加密明文，使用Bob的公钥加密密钥，生成nonce，根据密钥、明文、nonce生成hmac（确保完整性），用自己的私钥对消息和nonce的组合进行签名。Bob接收信息后，用私钥解密出密钥，用密钥解密出明文，再根据密钥、明文、nonce生成hmac检查是否被篡改，最后用alice的公钥验证签名</li>
-<li>存在中间人窃听：Alice的信息被Charlie窃听，Charlie按照Alice的流程发送新的信息给Bob，但是没有Alice的数字签名。Bob收到信息后经验证发现消息并不是由Alice发出的。</li>
-</ul>
-<p>验证通讯的安全性：</p>
-<p>原代码中，RSA原本为2048位的密钥，而2048位目前认为是不可破解的</p>
-<p>尝试改为1024位（更低的位数代码不允许），暴力破解时间还是过长</p>
-<p>直接编写代码暴力破解RSA</p>
-<table>
-<thead>
-<tr>
-<th>长度</th>
-<th>时间</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>32</td>
-<td>0.01</td>
-</tr>
-<tr>
-<td>36</td>
-<td>0.02</td>
-</tr>
-<tr>
-<td>48</td>
-<td>0.5</td>
-</tr>
-<tr>
-<td>56</td>
-<td>10.78</td>
-</tr>
-<tr>
-<td>60</td>
-<td>29.71</td>
-</tr>
-<tr>
-<td>62</td>
-<td>99.10</td>
-</tr>
-<tr>
-<td>64</td>
-<td>286.36</td>
-</tr>
-<tr>
-<td>68</td>
-<td>??</td>
-</tr>
-</tbody>
-</table>
-<p><span class="math inline">\(y=0.0000*e^{0.5378x}\)</span></p>
+                <p>2025.5.27开始整理，按照教材顺序，包括现控。主要写知识框架、例题、以及自己对其的理解</p>
+<p>思路：导论 - 数学模型 - 时域响应 - 稳定性概念/判断（根轨迹） -
+频域响应</p>
+<p>从第四章开始</p>
+<h1 id="第一章-控制系统概论">第一章 控制系统概论</h1>
+<p>导论内容，后续补充</p>
+<h1 id="第二章-连续时间控制系统的数学模型">第二章
+连续时间控制系统的数学模型</h1>
+<h1 id="第三章-连续时间控制系统的时域分析">第三章
+连续时间控制系统的时域分析</h1>
+<h1 id="第四章-连续时间控制系统的稳定性与稳态误差">第四章
+连续时间控制系统的稳定性与稳态误差</h1>
+<h1 id="第五章-根轨迹方法">第五章 根轨迹方法</h1>
+<h1 id="第六章-频率特性分析法">第六章 频率特性分析法</h1>
 
                 
               </div>
@@ -385,6 +333,13 @@
               <div class="post-metas my-3">
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="print-no-link">#复习笔记</a>
+      
+    </div>
+  
 </div>
 
 
@@ -393,8 +348,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>加密通信的设计与实现</div>
-      <div>https://xiaoomeiwang.github.io/2024/12/15/加密通信的设计与实现/</div>
+      <div>《自动控制原理》复习笔记</div>
+      <div>https://xiaoomeiwang.github.io/2025/05/26/《自动控制原理》复习笔记/</div>
     </div>
     <div class="license-meta">
       
@@ -406,7 +361,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年12月15日</div>
+          <div>2025年5月26日</div>
         </div>
       
       
@@ -438,18 +393,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="《自动控制原理》复习笔记">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">《自动控制原理》复习笔记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/12/10/%E7%94%B5%E6%A2%AF%E9%80%BB%E8%BE%91%E7%AC%94%E8%AE%B0/" title="电梯逻辑笔记">
-                        <span class="hidden-mobile">电梯逻辑笔记</span>
+                      <a href="/2024/12/15/%E5%8A%A0%E5%AF%86%E9%80%9A%E4%BF%A1%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/" title="加密通信的设计与实现">
+                        <span class="hidden-mobile">加密通信的设计与实现</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
