@@ -16,12 +16,12 @@
   <meta name="author" content="kk">
   <meta name="keywords" content="">
   
-    <meta name="description" content="参考教材：《自动控制原理》第二版  孙优贤 第一章 控制系统概论导论内容，后续补充 第二章 连续时间控制系统的数学模型第三章 连续时间控制系统的时域分析第四章 连续时间控制系统的稳定性与稳态误差4.1 劳斯稳定性判据判断LTI系统（线性时不变系统）的稳定性，充要条件是系统的特征值均具有负实部，即特征值均在虚轴左侧，或者说特征方程$Q(s)&#x3D;a_ns^n+a_{n-1}s^{n-1}+…+">
+    <meta name="description" content="参考教材：《自动控制原理》第二版 孙优贤 第一章 控制系统概论 导论内容，后续补充 第二章 连续时间控制系统的数学模型 第三章 连续时间控制系统的时域分析 第四章 连续时间控制系统的稳定性与稳态误差 4.1 劳斯稳定性判据 判断LTI系统（线性时不变系统）的稳定性，充要条件是系统的特征值均具有负实部，即特征值均在虚轴左侧，或者说特征方程\(Q(s)&#x3D;a_ns^n+a_{n-1}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《自动控制原理》复习笔记">
 <meta property="og:url" content="https://xiaoomeiwang.github.io/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="参考教材：《自动控制原理》第二版  孙优贤 第一章 控制系统概论导论内容，后续补充 第二章 连续时间控制系统的数学模型第三章 连续时间控制系统的时域分析第四章 连续时间控制系统的稳定性与稳态误差4.1 劳斯稳定性判据判断LTI系统（线性时不变系统）的稳定性，充要条件是系统的特征值均具有负实部，即特征值均在虚轴左侧，或者说特征方程$Q(s)&#x3D;a_ns^n+a_{n-1}s^{n-1}+…+">
+<meta property="og:description" content="参考教材：《自动控制原理》第二版 孙优贤 第一章 控制系统概论 导论内容，后续补充 第二章 连续时间控制系统的数学模型 第三章 连续时间控制系统的时域分析 第四章 连续时间控制系统的稳定性与稳态误差 4.1 劳斯稳定性判据 判断LTI系统（线性时不变系统）的稳定性，充要条件是系统的特征值均具有负实部，即特征值均在虚轴左侧，或者说特征方程\(Q(s)&#x3D;a_ns^n+a_{n-1}">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://xiaoomeiwang.github.io/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250527161247296.png">
 <meta property="og:image" content="https://xiaoomeiwang.github.io/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250530201201798.png">
@@ -36,10 +36,12 @@
 <meta property="og:image" content="https://xiaoomeiwang.github.io/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250530231318306.png">
 <meta property="og:image" content="https://xiaoomeiwang.github.io/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250531111250471.png">
 <meta property="og:image" content="https://xiaoomeiwang.github.io/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250531111343534.png">
+<meta property="og:image" content="https://xiaoomeiwang.github.io/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250605100314216.png">
+<meta property="og:image" content="https://xiaoomeiwang.github.io/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250605104507382.png">
 <meta property="article:published_time" content="2025-05-26T06:44:17.000Z">
-<meta property="article:modified_time" content="2025-06-05T00:48:26.228Z">
+<meta property="article:modified_time" content="2025-06-16T13:16:17.630Z">
 <meta property="article:author" content="kk">
-<meta property="article:tag" content="复习笔记">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://xiaoomeiwang.github.io/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250527161247296.png">
   
@@ -263,7 +265,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.9k 字
+          6.1k 字
         
       </span>
     
@@ -274,7 +276,7 @@
         
         
         
-          50 分钟
+          52 分钟
         
       </span>
     
@@ -324,395 +326,680 @@
             
               <div class="markdown-body">
                 
-                <p>参考教材：《自动控制原理》第二版  孙优贤</p>
-<h1 id="第一章-控制系统概论"><a href="#第一章-控制系统概论" class="headerlink" title="第一章 控制系统概论"></a>第一章 控制系统概论</h1><p>导论内容，后续补充</p>
-<h1 id="第二章-连续时间控制系统的数学模型"><a href="#第二章-连续时间控制系统的数学模型" class="headerlink" title="第二章 连续时间控制系统的数学模型"></a>第二章 连续时间控制系统的数学模型</h1><h1 id="第三章-连续时间控制系统的时域分析"><a href="#第三章-连续时间控制系统的时域分析" class="headerlink" title="第三章 连续时间控制系统的时域分析"></a>第三章 连续时间控制系统的时域分析</h1><h1 id="第四章-连续时间控制系统的稳定性与稳态误差"><a href="#第四章-连续时间控制系统的稳定性与稳态误差" class="headerlink" title="第四章 连续时间控制系统的稳定性与稳态误差"></a>第四章 连续时间控制系统的稳定性与稳态误差</h1><h2 id="4-1-劳斯稳定性判据"><a href="#4-1-劳斯稳定性判据" class="headerlink" title="4.1 劳斯稳定性判据"></a>4.1 劳斯稳定性判据</h2><p>判断LTI系统（线性时不变系统）的稳定性，充要条件是<strong>系统的特征值均具有负实部</strong>，即特征值均在<em>虚轴左侧</em>，或者说特征方程$Q(s)&#x3D;a_ns^n+a_{n-1}s^{n-1}+…+a_1s+a_0&#x3D;0$的根均在<em>虚轴左侧</em>。</p>
+                <p>参考教材：《自动控制原理》第二版 孙优贤</p>
+<h1 id="第一章-控制系统概论">第一章 控制系统概论</h1>
+<p>导论内容，后续补充</p>
+<h1 id="第二章-连续时间控制系统的数学模型">第二章
+连续时间控制系统的数学模型</h1>
+<h1 id="第三章-连续时间控制系统的时域分析">第三章
+连续时间控制系统的时域分析</h1>
+<h1 id="第四章-连续时间控制系统的稳定性与稳态误差">第四章
+连续时间控制系统的稳定性与稳态误差</h1>
+<h2 id="劳斯稳定性判据">4.1 劳斯稳定性判据</h2>
+<p>判断LTI系统（线性时不变系统）的稳定性，充要条件是<strong>系统的特征值均具有负实部</strong>，即特征值均在<em>虚轴左侧</em>，或者说特征方程<span
+class="math inline">\(Q(s)=a_ns^n+a_{n-1}s^{n-1}+...+a_1s+a_0=0\)</span>的根均在<em>虚轴左侧</em>。</p>
 <p>对于低阶方程，可直接求解特征方程；但方程阶次提高时，直接求解难度较大，可通过<strong>劳斯判据</strong>判断根是否在左半开平面。</p>
 <blockquote>
-<p>tips : 由于考试时可以带计算器，所以如果特征方程里面没有未知数，也可以直接用计算器算高阶特征方程的根来判断稳定性</p>
+<p>tips :
+由于考试时可以带计算器，所以如果特征方程里面没有未知数，也可以直接用计算器算高阶特征方程的根来判断稳定性</p>
 </blockquote>
 <p>如果所有特征根均位于S平面的左半平面，则：</p>
 <ul>
-<li><p>特征多项式的所有系数均有相同的符号；</p>
-</li>
-<li><p>所有系数均为非零常数</p>
-</li>
+<li><p>特征多项式的所有系数均有相同的符号；</p></li>
+<li><p>所有系数均为非零常数</p></li>
 </ul>
 <p>以上为<strong>必要不充分条件</strong>，所有系数非零且同号不能判断是否稳定，但稳定时的特征多项式一定满足系数非零且同号。</p>
 <p>劳斯判据是判别系统稳定性的<strong>充分必要条件</strong>。</p>
-<h3 id="4-1-1-劳斯判据步骤"><a href="#4-1-1-劳斯判据步骤" class="headerlink" title="4.1.1 劳斯判据步骤"></a>4.1.1 劳斯判据步骤</h3><ol>
-<li>将系统特征多项式的$Q(s)&#x3D;a_ns^n+a_{n-1}s^{n-1}+…+a_1s+a_0$的系数排列成如下两行：</li>
+<h3 id="劳斯判据步骤">4.1.1 劳斯判据步骤</h3>
+<ol type="1">
+<li>将系统特征多项式的<span
+class="math inline">\(Q(s)=a_ns^n+a_{n-1}s^{n-1}+...+a_1s+a_0\)</span>的系数排列成如下两行：</li>
 </ol>
-<p>$$<br>\begin{array}{c|ccccc}<br>s^n &amp; a_n &amp; a_{n-2} &amp; a_{n-4} &amp; a_{n-6} &amp; \cdots \<br>s^{n-1} &amp; a_{n-1} &amp; a_{n-3} &amp; a_{n-5} &amp; a_{n-7} &amp; \cdots \<br>\end{array}<br>$$</p>
-<ol start="2">
+<p><span class="math display">\[
+\begin{array}{c|ccccc}
+s^n &amp; a_n &amp; a_{n-2} &amp; a_{n-4} &amp; a_{n-6} &amp; \cdots \\
+s^{n-1} &amp; a_{n-1} &amp; a_{n-3} &amp; a_{n-5} &amp; a_{n-7} &amp;
+\cdots \\
+\end{array}
+\]</span></p>
+<ol start="2" type="1">
 <li>计算并完成劳斯阵列</li>
 </ol>
 <img src="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250527161247296.png" srcset="/img/loading.gif" lazyload class="" title="计算并完成劳斯阵列">
-
-
-
 <p>计算时，如果行列式对应位置没有元素，应补0</p>
-<ol start="3">
-<li>特征方程根中，正实部根的个数 &#x3D; 劳斯阵列中第一列元素<strong>符号变化的次数</strong></li>
+<ol start="3" type="1">
+<li>特征方程根中，正实部根的个数 =
+劳斯阵列中第一列元素<strong>符号变化的次数</strong></li>
 </ol>
-<p>​		稳定的充要条件：<strong>劳斯阵列的第一列元素没有符号变化</strong></p>
-<ol start="4">
+<p>​
+稳定的充要条件：<strong>劳斯阵列的第一列元素没有符号变化</strong></p>
+<ol start="4" type="1">
 <li>计算技巧：</li>
 </ol>
 <ul>
 <li>对于如下劳斯阵列</li>
 </ul>
-<p>$$<br>\begin{array}{c|cc}<br>s^3 &amp; a_3 &amp; a_1 \<br>s^2 &amp; a_2 &amp; a_0 \<br>s^1 &amp; c_1 &amp; 0 \<br>s^0 &amp; d_1 &amp; 0 \<br>\end{array}<br>$$</p>
-<p>其中$d_1$可计算为$d_1 &#x3D; \frac{-1}{c_1} \begin{vmatrix} a_2 &amp; a_0 \ c_1 &amp; 0 \end{vmatrix} &#x3D; a_0$，$a_0$下面的数为0时可以将$a_0$平移过去。</p>
+<p><span class="math display">\[
+\begin{array}{c|cc}
+s^3 &amp; a_3 &amp; a_1 \\
+s^2 &amp; a_2 &amp; a_0 \\
+s^1 &amp; c_1 &amp; 0 \\
+s^0 &amp; d_1 &amp; 0 \\
+\end{array}
+\]</span></p>
+<p>其中<span class="math inline">\(d_1\)</span>可计算为<span
+class="math inline">\(d_1 = \frac{-1}{c_1} \begin{vmatrix} a_2 &amp; a_0
+\\ c_1 &amp; 0 \end{vmatrix} = a_0\)</span>，<span
+class="math inline">\(a_0\)</span>下面的数为0时可以将<span
+class="math inline">\(a_0\)</span>平移过去。</p>
 <ul>
-<li>劳斯阵列同一行可以同乘&#x2F;除一个元素，不影响最终结果</li>
+<li>劳斯阵列同一行可以同乘/除一个元素，不影响最终结果</li>
 </ul>
-<h3 id="4-1-2-一些结论"><a href="#4-1-2-一些结论" class="headerlink" title="4.1.2 一些结论"></a>4.1.2 一些结论</h3><ul>
-<li>对于<strong>二阶系统</strong>，特征多项式为：$Q(s)&#x3D;a_2s^2+a_1s+a_0$</li>
+<h3 id="一些结论">4.1.2 一些结论</h3>
+<ul>
+<li>对于<strong>二阶系统</strong>，特征多项式为：<span
+class="math inline">\(Q(s)=a_2s^2+a_1s+a_0\)</span></li>
 </ul>
 <p>二阶系统稳定的充要条件是：<strong>特征多项式所有系数都具有相同的符号</strong></p>
 <ul>
-<li>对于<strong>三阶系统</strong>，特征多项式为：$Q(s)&#x3D;a_3s^3+a_2s^2+a_1s+a_0$</li>
+<li>对于<strong>三阶系统</strong>，特征多项式为：<span
+class="math inline">\(Q(s)=a_3s^3+a_2s^2+a_1s+a_0\)</span></li>
 </ul>
-<p>三阶系统稳定的充要条件是：<strong>$a_0,a_1,a_2,a_3,\frac{a_2a_1-a_0a_3}{a_2}$同号</strong>，或 <strong>$a_0,a_1,a_2,a_3$同号，且$a_2a_1-a_0a_3&gt;0$</strong></p>
-<h3 id="4-1-3-特殊情况"><a href="#4-1-3-特殊情况" class="headerlink" title="4.1.3 特殊情况"></a>4.1.3 特殊情况</h3><ol>
+<p>三阶系统稳定的充要条件是：<strong><span
+class="math inline">\(a_0,a_1,a_2,a_3,\frac{a_2a_1-a_0a_3}{a_2}\)</span>同号</strong>，或
+<strong><span
+class="math inline">\(a_0,a_1,a_2,a_3\)</span>同号，且<span
+class="math inline">\(a_2a_1-a_0a_3&gt;0\)</span></strong></p>
+<h3 id="特殊情况">4.1.3 特殊情况</h3>
+<ol type="1">
 <li>首列出现零元素，但在零元素所在的行中具有非零的其他元素</li>
 </ol>
 <p>两种解决方法：</p>
 <ul>
-<li><p>方法一：将$s&#x3D;\frac{1}{x}$代入原方程，重新整理特征多项式$Q_{new}(x)$，写出新特征多项式的劳斯阵列，用劳斯判据判断。$s \neq 0 $时，$s$和$\frac{1}{x}$是同号的，所以可以通过判断$Q_{new}(x)$的根的分布来间接判断$Q(s)$根的分布。</p>
-</li>
-<li><p>方法二：将原特征多项式乘以因式$(s+1)$，重新整理特征多项式，写出新的劳斯阵列。$s+1&#x3D;0$的根在左半平面，不会影响劳斯判据的判断。</p>
-</li>
+<li><p>方法一：将<span
+class="math inline">\(s=\frac{1}{x}\)</span>代入原方程，重新整理特征多项式<span
+class="math inline">\(Q_{new}(x)\)</span>，写出新特征多项式的劳斯阵列，用劳斯判据判断。$s
+<span class="math inline">\(时，\)</span>s<span
+class="math inline">\(和\)</span><span
+class="math inline">\(是同号的，所以可以通过判断\)</span>Q_{new}(x)<span
+class="math inline">\(的根的分布来间接判断\)</span>Q(s)$根的分布。</p></li>
+<li><p>方法二：将原特征多项式乘以因式<span
+class="math inline">\((s+1)\)</span>，重新整理特征多项式，写出新的劳斯阵列。<span
+class="math inline">\(s+1=0\)</span>的根在左半平面，不会影响劳斯判据的判断。</p></li>
 </ul>
-<ol start="2">
-<li>出现全零行——代表系统<strong>不稳定</strong>，且特征方程具有对称于原点的实根或复根，形式为：$s^2,(s+\sigma)(s-\sigma),(s+j\omega)(s-j\omega),(s^2+2\zeta\omega_ns+\omega_n^2)(s^2-2\zeta\omega_ns+\omega_n^2)$</li>
+<ol start="2" type="1">
+<li>出现全零行——代表系统<strong>不稳定</strong>，且特征方程具有对称于原点的实根或复根，形式为：<span
+class="math inline">\(s^2,(s+\sigma)(s-\sigma),(s+j\omega)(s-j\omega),(s^2+2\zeta\omega_ns+\omega_n^2)(s^2-2\zeta\omega_ns+\omega_n^2)\)</span></li>
 </ol>
 <p>两种解决方法：</p>
 <ul>
-<li>方法一：用一个很小的<strong>正数</strong>$\varepsilon$代替这一行的首个0，然后继续计算其他元素，获得的是除对称特征根以外其他根的信息。</li>
-<li>方法二：如果劳斯阵列第$i$行（$s^i$对应的行）元素全为零，根据该行的上一非零行构造辅助多项式</li>
+<li>方法一：用一个很小的<strong>正数</strong><span
+class="math inline">\(\varepsilon\)</span>代替这一行的首个0，然后继续计算其他元素，获得的是除对称特征根以外其他根的信息。</li>
+<li>方法二：如果劳斯阵列第<span
+class="math inline">\(i\)</span>行（<span
+class="math inline">\(s^i\)</span>对应的行）元素全为零，根据该行的上一非零行构造辅助多项式</li>
 </ul>
-<p>$$<br>U(s)&#x3D;\beta_1s^{i+1}+\beta_2s^{i-1}+\beta_3s^{i-3}+…<br>$$</p>
-<p>​		其中，$\beta_i$是上一非零行的系数，辅助多项式的阶次为对称特征根的个数，辅助多项式的根即为对称特征根</p>
-<p>​		原全零行元素替换为辅助多项式关于$s$的导函数的系数，继续完成劳斯阵列表，可获得除对称特征根以外其他特征根的信息</p>
-<p>​		如果辅助多项式求出的根是实部为0的对称虚根，对于单位阶跃输入，系统发生等幅震荡，虚部的绝对值为等幅振荡频率。</p>
+<p><span class="math display">\[
+U(s)=\beta_1s^{i+1}+\beta_2s^{i-1}+\beta_3s^{i-3}+...
+\]</span></p>
+<p>​ 其中，<span
+class="math inline">\(\beta_i\)</span>是上一非零行的系数，辅助多项式的阶次为对称特征根的个数，辅助多项式的根即为对称特征根</p>
+<p>​ 原全零行元素替换为辅助多项式关于<span
+class="math inline">\(s\)</span>的导函数的系数，继续完成劳斯阵列表，可获得除对称特征根以外其他特征根的信息</p>
+<p>​
+如果辅助多项式求出的根是实部为0的对称虚根，对于单位阶跃输入，系统发生等幅震荡，虚部的绝对值为等幅振荡频率。</p>
 <img src="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250530201201798.png" srcset="/img/loading.gif" lazyload class="" title="等幅振荡解释">
-
-<h3 id="4-1-4-劳斯判据应用"><a href="#4-1-4-劳斯判据应用" class="headerlink" title="4.1.4 劳斯判据应用"></a>4.1.4 劳斯判据应用</h3><ol>
-<li>稳定裕量的检验：令$s &#x3D; z - \sigma$，将虚轴左移$\sigma$，代入得到以$z$为变量的新特征方程。对新的方程使用劳斯判据，若所有根均在新虚轴的左边，则称系统具有稳定裕量$\sigma$</li>
+<h3 id="劳斯判据应用">4.1.4 劳斯判据应用</h3>
+<ol type="1">
+<li>稳定裕量的检验：令<span class="math inline">\(s = z -
+\sigma\)</span>，将虚轴左移<span
+class="math inline">\(\sigma\)</span>，代入得到以<span
+class="math inline">\(z\)</span>为变量的新特征方程。对新的方程使用劳斯判据，若所有根均在新虚轴的左边，则称系统具有稳定裕量<span
+class="math inline">\(\sigma\)</span></li>
 <li>分析系统参数对稳定性的影响（系统设计）</li>
 </ol>
-<h2 id="4-2-稳态误差"><a href="#4-2-稳态误差" class="headerlink" title="4.2 稳态误差"></a>4.2 稳态误差</h2><h3 id="4-2-1-稳态误差表达式"><a href="#4-2-1-稳态误差表达式" class="headerlink" title="4.2.1 稳态误差表达式"></a>4.2.1 稳态误差表达式</h3><p>典型方块图如下</p>
+<h2 id="稳态误差">4.2 稳态误差</h2>
+<h3 id="稳态误差表达式">4.2.1 稳态误差表达式</h3>
+<p>典型方块图如下</p>
 <img src="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250528113644720.png" srcset="/img/loading.gif" lazyload class="" title="典型方块图">
-
 <p>系统误差的两种定义方式：</p>
 <ul>
-<li>从输出端定义：误差&#x3D;期望输出与实际输出之差$e(t)&#x3D;y_d(t)-y(t)$，通常无法直接得到，不采用:x:</li>
-<li>从输入端定义：误差&#x3D;输入信号（设定值）与反馈信号（测量值）之差，$e(t)&#x3D;r(t)-z(t),E(s)&#x3D;R(S)-Z(s)&#x3D;R(s)-H(s)Y(s)$，可以直接得到，常采用</li>
+<li>从输出端定义：误差=期望输出与实际输出之差<span
+class="math inline">\(e(t)=y_d(t)-y(t)\)</span>，通常无法直接得到，不采用:x:</li>
+<li>从输入端定义：误差=输入信号（设定值）与反馈信号（测量值）之差，<span
+class="math inline">\(e(t)=r(t)-z(t),E(s)=R(S)-Z(s)=R(s)-H(s)Y(s)\)</span>，可以直接得到，常采用</li>
 </ul>
-<p>稳态误差（静态误差、余差）定义为：$e_{ss}&#x3D;\lim_{t\rightarrow \infty}e(t)$</p>
-<p>对于上图，系统输入有：参考输入$R(s)$，干扰输入$F(s)$，系统输出$Y(s)&#x3D;Y_r(s)+Y_f(s)$</p>
-<p>系统误差$E(s)&#x3D;R(s)-H(s)Y(s)&#x3D;R(s)-H(s)Y_r(s)-H(s)Y_f(s)&#x3D;E_r(s)+E_f(s)$</p>
-<p>为方便计算，误差分为由<strong>参考输入产生的误差$E_r(s)$<strong>和由</strong>干扰输入产生的误差$E_f(s)$</strong><br>$$<br>\begin{eqnarray}<br>E_r(s) &amp;&#x3D;&amp; R(s) - H(s)Y_r(s) \<br>~ &amp;&#x3D;&amp; R(s) - H(s)\frac{G_c(s)G_p(s)}{1 + G_c(s)G_p(s)H(s)}R(s)\<br>~ &amp;&#x3D;&amp; \frac{1}{1 + G_c(s)G_p(s)H(s)}R(s)<br>\end{eqnarray}<br>$$</p>
-<p>$$<br>E_f(s)&#x3D;-H(s)Y_f(s)&#x3D;\frac{-G_f(s)H(s)}{1+G_c(s)G_p(s)H(s)}F(s)<br>$$</p>
-<h3 id="4-2-2-终值定理"><a href="#4-2-2-终值定理" class="headerlink" title="4.2.2 终值定理"></a>4.2.2 终值定理</h3><p><strong>内容</strong>：若$L[f(t)]&#x3D;F(s)$且$F(s)$满足下列条件之一：</p>
+<p>稳态误差（静态误差、余差）定义为：<span
+class="math inline">\(e_{ss}=\lim_{t\rightarrow \infty}e(t)\)</span></p>
+<p>对于上图，系统输入有：参考输入<span
+class="math inline">\(R(s)\)</span>，干扰输入<span
+class="math inline">\(F(s)\)</span>，系统输出<span
+class="math inline">\(Y(s)=Y_r(s)+Y_f(s)\)</span></p>
+<p>系统误差<span
+class="math inline">\(E(s)=R(s)-H(s)Y(s)=R(s)-H(s)Y_r(s)-H(s)Y_f(s)=E_r(s)+E_f(s)\)</span></p>
+<p>为方便计算，误差分为由<strong>参考输入产生的误差<span
+class="math inline">\(E_r(s)\)</span></strong>和由<strong>干扰输入产生的误差<span
+class="math inline">\(E_f(s)\)</span></strong> <span
+class="math display">\[
+\begin{eqnarray}
+E_r(s) &amp;=&amp; R(s) - H(s)Y_r(s) \\
+~ &amp;=&amp; R(s) - H(s)\frac{G_c(s)G_p(s)}{1 + G_c(s)G_p(s)H(s)}R(s)\\
+~ &amp;=&amp; \frac{1}{1 + G_c(s)G_p(s)H(s)}R(s)
+\end{eqnarray}
+\]</span></p>
+<p><span class="math display">\[
+E_f(s)=-H(s)Y_f(s)=\frac{-G_f(s)H(s)}{1+G_c(s)G_p(s)H(s)}F(s)
+\]</span></p>
+<h3 id="终值定理">4.2.2 终值定理</h3>
+<p><strong>内容</strong>：若<span
+class="math inline">\(L[f(t)]=F(s)\)</span>且<span
+class="math inline">\(F(s)\)</span>满足下列条件之一：</p>
 <ul>
-<li>$F(s)$的所有极点在左半开平面</li>
-<li>$F(s)$有一个极点在原点，其它极点在左半开平面</li>
+<li><span class="math inline">\(F(s)\)</span>的所有极点在左半开平面</li>
+<li><span
+class="math inline">\(F(s)\)</span>有一个极点在原点，其它极点在左半开平面</li>
 </ul>
-<p>则$f(t)$存在有界终值并且<br>$$<br>\lim_{t\rightarrow \infty}f(t) &#x3D; \lim_{s\rightarrow0}sF(s)<br>$$<br><strong>等价表述</strong>：若$L[f(t)]&#x3D;F(s)$且$sF(s)$的所有极点在左半开平面，则$f(t)$存在有界终值并且$\lim_{t\rightarrow \infty} &#x3D; \lim_{s\rightarrow0}sF(s)$</p>
+<p>则<span class="math inline">\(f(t)\)</span>存在有界终值并且 <span
+class="math display">\[
+\lim_{t\rightarrow \infty}f(t) = \lim_{s\rightarrow0}sF(s)
+\]</span> <strong>等价表述</strong>：若<span
+class="math inline">\(L[f(t)]=F(s)\)</span>且<span
+class="math inline">\(sF(s)\)</span>的所有极点在左半开平面，则<span
+class="math inline">\(f(t)\)</span>存在有界终值并且<span
+class="math inline">\(\lim_{t\rightarrow \infty} =
+\lim_{s\rightarrow0}sF(s)\)</span></p>
 <blockquote>
 <p>使用终值定理前应先判断是否满足使用条件</p>
 </blockquote>
-<p><strong>用途</strong>：计算稳态误差$e_{ss}&#x3D;\lim_{t\rightarrow \infty}e(t) &#x3D; \lim_{s\rightarrow0}E(s)$</p>
-<p><strong>一个结论</strong>：在闭环控制系统中，若参考输入和干扰均为阶跃，控制器中的积分可使$e_{ssr},e_{ssf}$和$e_{ss}$均等于零</p>
-<h3 id="4-2-3-单位负反馈系统型别"><a href="#4-2-3-单位负反馈系统型别" class="headerlink" title="4.2.3 单位负反馈系统型别"></a>4.2.3 单位负反馈系统型别</h3><p>对于<strong>单位负反馈</strong>系统，系统的开环传递函数为$G(s)&#x3D;Y(s)&#x2F;E(s)$，可整理为$G(s)&#x3D;\frac{K\beta(s)}{s^m\alpha(s)}$。$m&#x3D;0,1,2$对应“0”型系统、“1”型系统、“2”型系统</p>
+<p><strong>用途</strong>：计算稳态误差<span
+class="math inline">\(e_{ss}=\lim_{t\rightarrow \infty}e(t) =
+\lim_{s\rightarrow0}E(s)\)</span></p>
+<p><strong>一个结论</strong>：在闭环控制系统中，若参考输入和干扰均为阶跃，控制器中的积分可使<span
+class="math inline">\(e_{ssr},e_{ssf}\)</span>和<span
+class="math inline">\(e_{ss}\)</span>均等于零</p>
+<h3 id="单位负反馈系统型别">4.2.3 单位负反馈系统型别</h3>
+<p>对于<strong>单位负反馈</strong>系统，系统的开环传递函数为<span
+class="math inline">\(G(s)=Y(s)/E(s)\)</span>，可整理为<span
+class="math inline">\(G(s)=\frac{K\beta(s)}{s^m\alpha(s)}\)</span>。<span
+class="math inline">\(m=0,1,2\)</span>对应“0”型系统、“1”型系统、“2”型系统</p>
 
-
-
-
-<p><strong>单位负反馈</strong>系统中，若$e_{ss}$存在，闭环系统稳定时，$e_{ss}&#x3D;\lim_{s\rightarrow0}sE(s)&#x3D;\lim_{s\rightarrow0}\frac{s^{m+1}}{s^m+K}R(s)$，由此公式，可在<em>阶跃、斜坡、抛物线</em>等输入下对各型别系统进行分析。</p>
+<p><strong>单位负反馈</strong>系统中，若<span
+class="math inline">\(e_{ss}\)</span>存在，闭环系统稳定时，<span
+class="math inline">\(e_{ss}=\lim_{s\rightarrow0}sE(s)=\lim_{s\rightarrow0}\frac{s^{m+1}}{s^m+K}R(s)\)</span>，由此公式，可在<em>阶跃、斜坡、抛物线</em>等输入下对各型别系统进行分析。</p>
 <ul>
-<li><p>0型系统（$m&#x3D;0$）：<strong>能有差跟踪阶跃，不能跟踪斜坡和抛物线</strong></p>
+<li><p>0型系统（<span
+class="math inline">\(m=0\)</span>）：<strong>能有差跟踪阶跃，不能跟踪斜坡和抛物线</strong></p>
 <ul>
-<li><p>阶跃：$r(t)&#x3D;R_0,R(s)&#x3D;{R_0}&#x2F;{s}$，代入公式$e_{ss}&#x3D;\lim_{s\rightarrow0}\frac{s}{1+K_0}\frac{R_0}{s}&#x3D;\frac{R_0}{1+K_0}$</p>
-</li>
-<li><p>斜坡：$r(t)&#x3D;R_1t,R(s)&#x3D;R_1&#x2F;s^2$，$\lim_{t\rightarrow\infty}e(t)&#x3D;\infty$（此处终值定理不可用，下同）</p>
-</li>
-<li><p>抛物线：$r(t)&#x3D;0.5R_2t^2,R(s)&#x3D;R_2&#x2F;s^3$，$\lim_{t\rightarrow\infty}e(t)&#x3D;\infty$</p>
-</li>
-</ul>
-</li>
-<li><p>1型系统（$m&#x3D;1$）：<strong>能无差跟踪阶跃，有差跟踪斜坡，不能跟踪抛物线</strong></p>
+<li><p>阶跃：<span
+class="math inline">\(r(t)=R_0,R(s)={R_0}/{s}\)</span>，代入公式<span
+class="math inline">\(e_{ss}=\lim_{s\rightarrow0}\frac{s}{1+K_0}\frac{R_0}{s}=\frac{R_0}{1+K_0}\)</span></p></li>
+<li><p>斜坡：<span
+class="math inline">\(r(t)=R_1t,R(s)=R_1/s^2\)</span>，<span
+class="math inline">\(\lim_{t\rightarrow\infty}e(t)=\infty\)</span>（此处终值定理不可用，下同）</p></li>
+<li><p>抛物线：<span
+class="math inline">\(r(t)=0.5R_2t^2,R(s)=R_2/s^3\)</span>，<span
+class="math inline">\(\lim_{t\rightarrow\infty}e(t)=\infty\)</span></p></li>
+</ul></li>
+<li><p>1型系统（<span
+class="math inline">\(m=1\)</span>）：<strong>能无差跟踪阶跃，有差跟踪斜坡，不能跟踪抛物线</strong></p>
 <ul>
-<li><p>阶跃：$r(t)&#x3D;R_0,R(s)&#x3D;{R_0}&#x2F;{s}$，代入公式$e_{ss}&#x3D;\lim_{s\rightarrow0}\frac{s^2}{s+K_1}\frac{R_0}{s}&#x3D;0$</p>
-</li>
-<li><p>斜坡：$r(t)&#x3D;R_1t,R(s)&#x3D;R_1&#x2F;s^2$，$e_{ss}&#x3D;\lim_{s\rightarrow0}\frac{s^2}{s+K_1}\frac{R_1}{s^2}&#x3D;\frac{R_1}{K_1}$</p>
-</li>
-<li><p>抛物线：$r(t)&#x3D;0.5R_2t^2,R(s)&#x3D;R_2&#x2F;s^3$，$\lim_{t\rightarrow\infty}e(t)&#x3D;\infty$</p>
-</li>
-</ul>
-</li>
-<li><p>2型系统（$m&#x3D;2$）：<strong>能无差跟踪阶跃、斜坡，有差跟踪抛物线</strong></p>
+<li><p>阶跃：<span
+class="math inline">\(r(t)=R_0,R(s)={R_0}/{s}\)</span>，代入公式<span
+class="math inline">\(e_{ss}=\lim_{s\rightarrow0}\frac{s^2}{s+K_1}\frac{R_0}{s}=0\)</span></p></li>
+<li><p>斜坡：<span
+class="math inline">\(r(t)=R_1t,R(s)=R_1/s^2\)</span>，<span
+class="math inline">\(e_{ss}=\lim_{s\rightarrow0}\frac{s^2}{s+K_1}\frac{R_1}{s^2}=\frac{R_1}{K_1}\)</span></p></li>
+<li><p>抛物线：<span
+class="math inline">\(r(t)=0.5R_2t^2,R(s)=R_2/s^3\)</span>，<span
+class="math inline">\(\lim_{t\rightarrow\infty}e(t)=\infty\)</span></p></li>
+</ul></li>
+<li><p>2型系统（<span
+class="math inline">\(m=2\)</span>）：<strong>能无差跟踪阶跃、斜坡，有差跟踪抛物线</strong></p>
 <ul>
-<li><p>阶跃：$r(t)&#x3D;R_0,R(s)&#x3D;{R_0}&#x2F;{s}$，代入公式$e_{ss}&#x3D;\lim_{s\rightarrow0}\frac{s^3}{s^2+K_2}\frac{R_0}{s}&#x3D;0$</p>
-</li>
-<li><p>斜坡：$r(t)&#x3D;R_1t,R(s)&#x3D;R_1&#x2F;s^2$，$e_{ss}&#x3D;\lim_{s\rightarrow0}\frac{s^3}{s^2+K_2}\frac{R_1}{s^2}&#x3D;0$</p>
-</li>
-<li><p>抛物线：$r(t)&#x3D;0.5R_2t^2,R(s)&#x3D;R_2&#x2F;s^3$，$e_{ss}&#x3D;\lim_{s\rightarrow0}\frac{s^3}{s^2+K_2}\frac{R_2}{s^3}&#x3D;\frac{R_2}{K_2}$</p>
-</li>
+<li><p>阶跃：<span
+class="math inline">\(r(t)=R_0,R(s)={R_0}/{s}\)</span>，代入公式<span
+class="math inline">\(e_{ss}=\lim_{s\rightarrow0}\frac{s^3}{s^2+K_2}\frac{R_0}{s}=0\)</span></p></li>
+<li><p>斜坡：<span
+class="math inline">\(r(t)=R_1t,R(s)=R_1/s^2\)</span>，<span
+class="math inline">\(e_{ss}=\lim_{s\rightarrow0}\frac{s^3}{s^2+K_2}\frac{R_1}{s^2}=0\)</span></p></li>
+<li><p>抛物线：<span
+class="math inline">\(r(t)=0.5R_2t^2,R(s)=R_2/s^3\)</span>，<span
+class="math inline">\(e_{ss}=\lim_{s\rightarrow0}\frac{s^3}{s^2+K_2}\frac{R_2}{s^3}=\frac{R_2}{K_2}\)</span></p></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>误差系数：在<strong>给定的参考输入</strong>下，单位负反馈稳定控制系统稳态精度的一种度量。对于输入$\frac{R_p}{s^{p+1}}$，若余差$e_{ss}$为有界常数，误差系数为$\frac{稳态输入的p阶微分}{e_{ss}}$</p>
+<p>误差系数：在<strong>给定的参考输入</strong>下，单位负反馈稳定控制系统稳态精度的一种度量。对于输入<span
+class="math inline">\(\frac{R_p}{s^{p+1}}\)</span>，若余差<span
+class="math inline">\(e_{ss}\)</span>为有界常数，误差系数为<span
+class="math inline">\(\frac{稳态输入的p阶微分}{e_{ss}}\)</span></p>
 <p>误差系数与系统型别<strong>无关</strong>，根据<strong>输入</strong>的形式来定义，只针对稳定的<strong>单位负反馈系统</strong></p>
 <ul>
-<li><p>阶跃误差系数定义为：$K_p&#x3D;\frac{\lim_{t\rightarrow\infty} y(t)}{e_ss}$，仅适用于阶跃输入，计算式：$K_p&#x3D;\lim_{s\rightarrow0}G(s)$</p>
-</li>
-<li><p>斜坡误差系数定义为：$K_v&#x3D;\frac{\lim_{t\rightarrow\infty}\frac{dy(t)}{dt}}{e_{ss}}$，仅适用于斜坡输入，计算式：$K_v&#x3D;\lim_{s\rightarrow0}sG(s)$</p>
-</li>
-<li><p>抛物线误差系数定义为：$K_a&#x3D;\frac{\lim_{t\rightarrow\infty}\frac{d^2y(t)}{dt^2}}{e_{ss}}$，仅适用于抛物线输入，计算式：$K_a&#x3D;\lim_{s\rightarrow0}s^2G(s)$</p>
-</li>
+<li><p>阶跃误差系数定义为：<span
+class="math inline">\(K_p=\frac{\lim_{t\rightarrow\infty}
+y(t)}{e_ss}\)</span>，仅适用于阶跃输入，计算式：<span
+class="math inline">\(K_p=\lim_{s\rightarrow0}G(s)\)</span></p></li>
+<li><p>斜坡误差系数定义为：<span
+class="math inline">\(K_v=\frac{\lim_{t\rightarrow\infty}\frac{dy(t)}{dt}}{e_{ss}}\)</span>，仅适用于斜坡输入，计算式：<span
+class="math inline">\(K_v=\lim_{s\rightarrow0}sG(s)\)</span></p></li>
+<li><p>抛物线误差系数定义为：<span
+class="math inline">\(K_a=\frac{\lim_{t\rightarrow\infty}\frac{d^2y(t)}{dt^2}}{e_{ss}}\)</span>，仅适用于抛物线输入，计算式：<span
+class="math inline">\(K_a=\lim_{s\rightarrow0}s^2G(s)\)</span></p></li>
 </ul>
 <p>主要需要记住下面的表格</p>
 <img src="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250529221905675.png" srcset="/img/loading.gif" lazyload class="" title="系统型别与稳态误差">
-
-
-
-<p>注意：以上的阶跃、斜坡、抛物线输入均为典型输入，如果输入为形如$r(t)&#x3D;R_0+R_1t+\frac{R_2}{2}t^2$，需要使用叠加原理</p>
+<p>注意：以上的阶跃、斜坡、抛物线输入均为典型输入，如果输入为形如<span
+class="math inline">\(r(t)=R_0+R_1t+\frac{R_2}{2}t^2\)</span>，需要使用叠加原理</p>
 <p>结论：</p>
 <ul>
-<li>$m$型系统可以以零稳态误差跟踪具有 $t^{m−1}$及更低次形式的输入。</li>
-<li>$m$ 型系统可以跟踪具有 $t^m$ 形式的输入，但存在常数稳态误差。</li>
-<li>$m$ 型系统不能跟踪具有 $t^{m+1}$及更高次形式的输入，因为稳态误差趋向于无穷值。</li>
+<li><span class="math inline">\(m\)</span>型系统可以以零稳态误差跟踪具有
+<span class="math inline">\(t^{m−1}\)</span>及更低次形式的输入。</li>
+<li><span class="math inline">\(m\)</span> 型系统可以跟踪具有 <span
+class="math inline">\(t^m\)</span> 形式的输入，但存在常数稳态误差。</li>
+<li><span class="math inline">\(m\)</span> 型系统不能跟踪具有 <span
+class="math inline">\(t^{m+1}\)</span>及更高次形式的输入，因为稳态误差趋向于无穷值。</li>
 </ul>
 <p>对于<strong>非</strong>单位负反馈系统，可以转换为等价的单位负反馈系统，进行与上面相同的分析</p>
 <img src="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250529225040477.png" srcset="/img/loading.gif" lazyload class="" title="非单位负反馈系统等价替换">
-
-
-
-
-
-
-
-<h1 id="第五章-根轨迹方法"><a href="#第五章-根轨迹方法" class="headerlink" title="第五章 根轨迹方法"></a>第五章 根轨迹方法</h1><p><strong>控制系统的综合</strong>：根据期望的控制性能指标以及原系统模型，确定控制系统的结构、设计控制律及参数、选定控制元器件，以达到期望的性能指标。</p>
-<h2 id="5-1-根轨迹概述"><a href="#5-1-根轨迹概述" class="headerlink" title="5.1 根轨迹概述"></a>5.1 根轨迹概述</h2><ol>
-<li><p>定义：当闭环系统某一参数（如开环根轨迹增益）变化时，闭环极点在S平面上变化的轨迹</p>
-</li>
-<li><p>作用：直观展示某个参数对全部闭环极点的影响，能够确定<strong>每个控制参数对应的闭环极点的位置</strong>。</p>
-</li>
-<li><p>闭环传递函数 与 开环传递函数$G(s)H(s)$的关系</p>
-</li>
+<h1 id="第五章-根轨迹方法">第五章 根轨迹方法</h1>
+<p><strong>控制系统的综合</strong>：根据期望的控制性能指标以及原系统模型，确定控制系统的结构、设计控制律及参数、选定控制元器件，以达到期望的性能指标。</p>
+<h2 id="根轨迹概述">5.1 根轨迹概述</h2>
+<ol type="1">
+<li><p>定义：当闭环系统某一参数（如开环根轨迹增益）变化时，闭环极点在S平面上变化的轨迹</p></li>
+<li><p>作用：直观展示某个参数对全部闭环极点的影响，能够确定<strong>每个控制参数对应的闭环极点的位置</strong>。</p></li>
+<li><p>闭环传递函数 与 开环传递函数<span
+class="math inline">\(G(s)H(s)\)</span>的关系</p></li>
 </ol>
 <img src="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250530155512080.png" srcset="/img/loading.gif" lazyload class="" title="方块图">
-
-
-
-<p>$\frac{C(s)}{R(s)}&#x3D;\frac{G(s)}{1+G(s)H(s)}$，其中$G(s)H(s)&#x3D;K\frac{(s-z_1)(s-z_2)…(s-z_w)}{(s-p_1)(s-p_2)…(s-p_n)}$（n个极点，w个零点）</p>
-<p>闭环特征方程：$1+G(s)H(s)&#x3D;(s-p_1)(s-p_2)…(s-p_n)+K(s-z_1)(s-z_2)…(s-z_w)&#x3D;0$</p>
-<p>闭环传递函数$\phi(s)&#x3D;\frac{G(s)}{1+G(s)H(s)}$</p>
+<p><span
+class="math inline">\(\frac{C(s)}{R(s)}=\frac{G(s)}{1+G(s)H(s)}\)</span>，其中<span
+class="math inline">\(G(s)H(s)=K\frac{(s-z_1)(s-z_2)...(s-z_w)}{(s-p_1)(s-p_2)...(s-p_n)}\)</span>（n个极点，w个零点）</p>
+<p>闭环特征方程：<span
+class="math inline">\(1+G(s)H(s)=(s-p_1)(s-p_2)...(s-p_n)+K(s-z_1)(s-z_2)...(s-z_w)=0\)</span></p>
+<p>闭环传递函数<span
+class="math inline">\(\phi(s)=\frac{G(s)}{1+G(s)H(s)}\)</span></p>
 <ul>
-<li><p>若 $n &gt; w$，闭环系统根轨迹增益等于开环系统前向通道根轨迹增益$K_{1r}$</p>
-</li>
-<li><p>闭环零点由开环前向通道传递函数$G(s)$零点和反馈通道传递函数$H(s)$极点组成</p>
-</li>
-<li><p>闭环极点与开环零、极点和根轨迹增益有关</p>
-</li>
+<li><p>若 <span class="math inline">\(n &gt;
+w\)</span>，闭环系统根轨迹增益等于开环系统前向通道根轨迹增益<span
+class="math inline">\(K_{1r}\)</span></p></li>
+<li><p>闭环零点由开环前向通道传递函数<span
+class="math inline">\(G(s)\)</span>零点和反馈通道传递函数<span
+class="math inline">\(H(s)\)</span>极点组成</p></li>
+<li><p>闭环极点与开环零、极点和根轨迹增益有关</p></li>
 </ul>
-<ol start="4">
+<ol start="4" type="1">
 <li>任给一个点，判断该点在根轨迹上的方法：</li>
 </ol>
-<p>充要条件：$s\in C$在根轨迹上，当且仅当$\exist K \in R$满足$1+G(s)H(s)&#x3D;1+\frac{K(s-z_1)…(s-z_w)}{(s-p_1)…(s-p_n)}&#x3D;0$</p>
+<p>充要条件：<span class="math inline">\(s\in
+C\)</span>在根轨迹上，当且仅当<span class="math inline">\(\exist K \in
+R\)</span>满足<span
+class="math inline">\(1+G(s)H(s)=1+\frac{K(s-z_1)...(s-z_w)}{(s-p_1)...(s-p_n)}=0\)</span></p>
 <p>上述方程存在复数，为方便求解，可以判断幅值条件和相角条件</p>
-<p>加工原表达式，得到$G(s)H(s)&#x3D;\frac{K(s-z_1)…(s-z_w)}{(s-p_1)…(s-p_n)}&#x3D;-1&#x3D;e^{j(1+2h)\pi},h&#x3D;0,\pm1,\pm2$</p>
-<p><strong>幅值条件：</strong>$|G(s)H(s)|&#x3D;1$，可求出$K$</p>
-<p><strong>相角条件：</strong><br>$$<br>\angle(s-z_1)+\cdots+\angle(s-z_w)-\angle(s-p_1)-\cdots-\angle(s-p_n)\<br>\left{</p>
-<p>\begin{aligned}<br>&amp;&#x3D;(2h+1)180^{\circ} \quad \text{若} K&gt;0 \<br>&amp;&#x3D;h360^{\circ} \quad \text{若} K&lt;0<br>\end{aligned}<br>\right.<br>$$</p>
+<p>加工原表达式，得到<span
+class="math inline">\(G(s)H(s)=\frac{K(s-z_1)...(s-z_w)}{(s-p_1)...(s-p_n)}=-1=e^{j(1+2h)\pi},h=0,\pm1,\pm2\)</span></p>
+<p><strong>幅值条件：</strong><span
+class="math inline">\(|G(s)H(s)|=1\)</span>，可求出<span
+class="math inline">\(K\)</span></p>
+<p><strong>相角条件：</strong> $$ (s-z_1)++(s-z_w)-(s-p_1)--(s-p_n)\
+{</p>
+<span class="math display">\[\begin{aligned}
+&amp;=(2h+1)180^{\circ} \quad \text{若} K&gt;0 \\
+&amp;=h360^{\circ} \quad \text{若} K&lt;0
+\end{aligned}\]</span>
+<p>. $$</p>
 <blockquote>
-<p>有时会说$K&gt;0$时$\angle G(s)H(s)&#x3D;(1+2h)180^{\circ}$，$K&lt;0$时$\angle G(s)H(s)&#x3D;h360^{\circ}$，这里的$G(s)H(s)$不计入$K$量的相角</p>
+<p>有时会说<span class="math inline">\(K&gt;0\)</span>时<span
+class="math inline">\(\angle G(s)H(s)=(1+2h)180^{\circ}\)</span>，<span
+class="math inline">\(K&lt;0\)</span>时<span
+class="math inline">\(\angle G(s)H(s)=h360^{\circ}\)</span>，这里的<span
+class="math inline">\(G(s)H(s)\)</span>不计入<span
+class="math inline">\(K\)</span>量的相角</p>
 </blockquote>
-<p>流程：首先确定s满足相角条件，再通过幅值条件求出$K$。</p>
-<h2 id="5-2-根轨迹绘制方法"><a href="#5-2-根轨迹绘制方法" class="headerlink" title="5.2 根轨迹绘制方法"></a>5.2 根轨迹绘制方法</h2><h3 id="5-2-1-前提条件"><a href="#5-2-1-前提条件" class="headerlink" title="5.2.1 前提条件"></a>5.2.1 前提条件</h3><ul>
-<li><p>开环传递函数（零极点形式）：$G(s)H(s)&#x3D;K\frac{(s-z_1)(s-z_2)…(s-z_w)}{(s-p_1)(s-p_2)…(s-p_n)}$，零点数为$w$，极点数为$n$</p>
-</li>
-<li><p>开环零点$z_j$和开环极点$p_i$已知，参数$K$在$(0,+\infty)$<em>或</em>$(-\infty,0)$中变动</p>
-</li>
-<li><p>要求在s平面上绘制方程$(s-p_1)(s-p_2)…(s-p_n)+K(s-z_1)(s-z_2)…(s-z_w)&#x3D;0$的根随$K$变动的轨迹</p>
-</li>
+<p>流程：首先确定s满足相角条件，再通过幅值条件求出<span
+class="math inline">\(K\)</span>。</p>
+<h2 id="根轨迹绘制方法">5.2 根轨迹绘制方法</h2>
+<h3 id="前提条件">5.2.1 前提条件</h3>
+<ul>
+<li><p>开环传递函数（零极点形式）：<span
+class="math inline">\(G(s)H(s)=K\frac{(s-z_1)(s-z_2)...(s-z_w)}{(s-p_1)(s-p_2)...(s-p_n)}\)</span>，零点数为<span
+class="math inline">\(w\)</span>，极点数为<span
+class="math inline">\(n\)</span></p></li>
+<li><p>开环零点<span class="math inline">\(z_j\)</span>和开环极点<span
+class="math inline">\(p_i\)</span>已知，参数<span
+class="math inline">\(K\)</span>在<span
+class="math inline">\((0,+\infty)\)</span><em>或</em><span
+class="math inline">\((-\infty,0)\)</span>中变动</p></li>
+<li><p>要求在s平面上绘制方程<span
+class="math inline">\((s-p_1)(s-p_2)...(s-p_n)+K(s-z_1)(s-z_2)...(s-z_w)=0\)</span>的根随<span
+class="math inline">\(K\)</span>变动的轨迹</p></li>
 </ul>
-<h3 id="5-2-2-绘制法则（-K-0-）"><a href="#5-2-2-绘制法则（-K-0-）" class="headerlink" title="5.2.2 绘制法则（$K&gt;0$）"></a>5.2.2 绘制法则（$K&gt;0$）</h3><ol>
+<h3 id="绘制法则k0">5.2.2 绘制法则（<span
+class="math inline">\(K&gt;0\)</span>）</h3>
+<ol type="1">
 <li>根轨迹的<strong>分支、对称性和连续性</strong></li>
 </ol>
 <ul>
-<li>根轨迹的<strong>分支数</strong>等于开环零点数$w$与开环极点数$n$之大者 $max(n,w)$</li>
+<li>根轨迹的<strong>分支数</strong>等于开环零点数<span
+class="math inline">\(w\)</span>与开环极点数<span
+class="math inline">\(n\)</span>之大者 <span
+class="math inline">\(max(n,w)\)</span></li>
 <li>根轨迹关于<strong>实轴</strong>对称（根为实数或共轭复数）</li>
 <li>根轨迹的每个分支都是<strong>连续</strong>的曲线</li>
 </ul>
-<ol start="2">
-<li>根轨迹的<strong>起点（$K&#x3D;0$）和终点（$K&#x3D;+\infty$）</strong></li>
+<ol start="2" type="1">
+<li>根轨迹的<strong>起点（<span
+class="math inline">\(K=0\)</span>）和终点（<span
+class="math inline">\(K=+\infty\)</span>）</strong></li>
 </ol>
-<p>​	根轨迹起始于开环极点（有限极点和无限极点），终止于开环零点（有限零点和无限零点）</p>
-<ol start="3">
-<li>根轨迹的<strong>渐近线（$n&gt;w$）</strong>：针对“无限”的终点</li>
+<p>​
+根轨迹起始于开环极点（有限极点和无限极点），终止于开环零点（有限零点和无限零点）</p>
+<ol start="3" type="1">
+<li>根轨迹的<strong>渐近线（<span
+class="math inline">\(n&gt;w\)</span>）</strong>：针对“无限”的终点</li>
 </ol>
-<p>$n&gt;w$下的渐近线条数： $n-w$条 （$n$个有限起点，$w$个有限终点，<strong>$n-w$个无限终点</strong>，$n$条根轨迹）</p>
+<p><span class="math inline">\(n&gt;w\)</span>下的渐近线条数： <span
+class="math inline">\(n-w\)</span>条 （<span
+class="math inline">\(n\)</span>个有限起点，<span
+class="math inline">\(w\)</span>个有限终点，<strong><span
+class="math inline">\(n-w\)</span>个无限终点</strong>，<span
+class="math inline">\(n\)</span>条根轨迹）</p>
 <p>渐近线（射线）的计算方法：</p>
 <ul>
-<li><p>与实轴的夹角$\gamma&#x3D;\frac{(1+2k)180^{\circ}}{n-w},k\in{0,1,…,n-w-1}$</p>
-</li>
-<li><p>与实轴的交点$\sigma_0&#x3D;\frac{\Sigma_{i&#x3D;1}^np_i-\Sigma_{j&#x3D;1}^{w}z_j}{n-w}$</p>
-</li>
+<li><p>与实轴的夹角<span
+class="math inline">\(\gamma=\frac{(1+2k)180^{\circ}}{n-w},k\in\{0,1,...,n-w-1\}\)</span></p></li>
+<li><p>与实轴的交点<span
+class="math inline">\(\sigma_0=\frac{\Sigma_{i=1}^np_i-\Sigma_{j=1}^{w}z_j}{n-w}\)</span></p></li>
 </ul>
-<ol start="4">
+<ol start="4" type="1">
 <li><strong>实轴</strong>上的根轨迹</li>
 </ol>
 <ul>
-<li><p>复数零点、复数极点以及点s<strong>左侧</strong>的实零点、实极点对相角条件（180的奇数倍）没有影响</p>
-</li>
-<li><p>实轴上的点s在根轨迹上，当且仅当s右侧<strong>实</strong>零点数与<strong>实</strong>极点数之和是<strong>奇数</strong></p>
-</li>
+<li><p>复数零点、复数极点以及点s<strong>左侧</strong>的实零点、实极点对相角条件（180的奇数倍）没有影响</p></li>
+<li><p>实轴上的点s在根轨迹上，当且仅当s右侧<strong>实</strong>零点数与<strong>实</strong>极点数之和是<strong>奇数</strong></p></li>
 </ul>
-<ol start="5">
+<ol start="5" type="1">
 <li>根轨迹的分离点和分离角</li>
 </ol>
 <p>a.<strong>分离点</strong>：两条或以上的根轨迹分支在s平面相遇又分开的点，这一点是特征方程的<strong>重根</strong>，有两种求解方法：</p>
 <p>（1）方法一：</p>
 <ul>
-<li>分离点$r$满足条件：$\Sigma_{i&#x3D;1}^n \frac{1}{r-p_i}&#x3D;\Sigma_{j&#x3D;1}^{w}\frac{1}{r-z_j},r\in C$，解方程可求分离点</li>
-<li>无有限极点时：$\Sigma_{j&#x3D;1}^{w}\frac{1}{r-z_j}&#x3D;0,r\in C$（极点一侧等于零）</li>
-<li>无有限零点时：$\Sigma_{i&#x3D;1}^n \frac{1}{r-p_i}&#x3D;0,r\in C$（零点一侧等于零）</li>
+<li>分离点<span class="math inline">\(r\)</span>满足条件：<span
+class="math inline">\(\Sigma_{i=1}^n
+\frac{1}{r-p_i}=\Sigma_{j=1}^{w}\frac{1}{r-z_j},r\in
+C\)</span>，解方程可求分离点</li>
+<li>无有限极点时：<span
+class="math inline">\(\Sigma_{j=1}^{w}\frac{1}{r-z_j}=0,r\in
+C\)</span>（极点一侧等于零）</li>
+<li>无有限零点时：<span class="math inline">\(\Sigma_{i=1}^n
+\frac{1}{r-p_i}=0,r\in C\)</span>（零点一侧等于零）</li>
 </ul>
-<p>（2）方法二：令$W(s) &#x3D; \frac{\prod_{i&#x3D;1}^{n} (s - p_i)}{\prod_{j&#x3D;1}^{w} (s - z_j)} &#x3D; -K$，$\frac{d(-K)}{ds}|<em>{s&#x3D;r}&#x3D;\frac{dW(s)}{ds}|</em>{s&#x3D;r}&#x3D;0$，解方程可得分离点</p>
-<p>更复杂情况：如果在根轨迹的给定点处$w(s)$的$y-1$阶导数为0，则有$y$条根轨迹分支在该点相聚又分离</p>
+<p>（2）方法二：令<span class="math inline">\(W(s) =
+\frac{\prod_{i=1}^{n} (s - p_i)}{\prod_{j=1}^{w} (s - z_j)} =
+-K\)</span>，<span
+class="math inline">\(\frac{d(-K)}{ds}|_{s=r}=\frac{dW(s)}{ds}|_{s=r}=0\)</span>，解方程可得分离点</p>
+<p>更复杂情况：如果在根轨迹的给定点处<span
+class="math inline">\(w(s)\)</span>的<span
+class="math inline">\(y-1\)</span>阶导数为0，则有<span
+class="math inline">\(y\)</span>条根轨迹分支在该点相聚又分离</p>
 <p>方法二可以确定有几条轨迹经过分离点，方法一只能求分离点</p>
 <p>两个结论：</p>
 <ul>
-<li>两个极点&#x2F;零点之间存在根轨迹，根轨迹上必有分离点</li>
-<li>极点和零点之间如果存在分离点，至少有两个，如下图，分离点处K达到极大&#x2F;极小值</li>
+<li>两个极点/零点之间存在根轨迹，根轨迹上必有分离点</li>
+<li>极点和零点之间如果存在分离点，至少有两个，如下图，分离点处K达到极大/极小值</li>
 </ul>
 <img src="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250530222016961.png" srcset="/img/loading.gif" lazyload class="" title="特殊分离点">
-
-
-
-<p>b.<strong>分离角</strong>：两条根轨迹分支 由实轴外进入实分离点&#x2F;离开实分离点进入实轴外 的轨线方向角</p>
-<p>​	公式：$\frac{(2h+1)180^{\circ}}{l}$，其中$l$表示有$l$条根轨迹在该分离点分离，$h$的范围可取$0$到$l-1$的整数</p>
-<ol start="6">
+<p>b.<strong>分离角</strong>：两条根轨迹分支
+由实轴外进入实分离点/离开实分离点进入实轴外 的轨线方向角</p>
+<p>​ 公式：<span
+class="math inline">\(\frac{(2h+1)180^{\circ}}{l}\)</span>，其中<span
+class="math inline">\(l\)</span>表示有<span
+class="math inline">\(l\)</span>条根轨迹在该分离点分离，<span
+class="math inline">\(h\)</span>的范围可取<span
+class="math inline">\(0\)</span>到<span
+class="math inline">\(l-1\)</span>的整数</p>
+<ol start="6" type="1">
 <li>出射角（起始角）及入射角（终止角）——根轨迹离开极点或到达零点的方向角</li>
 </ol>
 <ul>
-<li>根轨迹离开$q$重开环极点$p_d$的出射角（起始角）</li>
+<li>根轨迹离开<span class="math inline">\(q\)</span>重开环极点<span
+class="math inline">\(p_d\)</span>的出射角（起始角）</li>
 </ul>
-<p>$$<br>\phi_{p_d} &#x3D; \frac{(1 + 2k)180^{\circ} + \sum_{j&#x3D;1}^{w} \angle(p_d - z_j) - \sum_{\substack{i&#x3D;1 \ p_i \neq p_d}}^{n} \angle(p_d - p_i)}{q} \quad k \in {0, 1, \cdots, q-1}<br>$$</p>
+<p><span class="math display">\[
+\phi_{p_d} = \frac{(1 + 2k)180^{\circ} + \sum_{j=1}^{w} \angle(p_d -
+z_j) - \sum_{\substack{i=1 \\ p_i \neq p_d}}^{n} \angle(p_d - p_i)}{q}
+\quad k \in \{0, 1, \cdots, q-1\}
+\]</span></p>
 <ul>
-<li>根轨迹到达$q$重开环零点$z_d$的入射角（终止角）</li>
+<li>根轨迹到达<span class="math inline">\(q\)</span>重开环零点<span
+class="math inline">\(z_d\)</span>的入射角（终止角）</li>
 </ul>
-<p>$$<br>\psi_{z_d} &#x3D; \frac{(1 + 2k)180^{\circ} + \sum_{i&#x3D;1}^{n} \angle(z_d - p_i) - \sum_{\substack{j&#x3D;1 \ z_j \neq z_d}}^{w} \angle(z_d - z_j)}{q} \quad k \in {0, 1, \cdots, q-1}<br>$$</p>
+<p><span class="math display">\[
+\psi_{z_d} = \frac{(1 + 2k)180^{\circ} + \sum_{i=1}^{n} \angle(z_d -
+p_i) - \sum_{\substack{j=1 \\ z_j \neq z_d}}^{w} \angle(z_d - z_j)}{q}
+\quad k \in \{0, 1, \cdots, q-1\}
+\]</span></p>
 <blockquote>
 <p>计算夹角可以使用计算器</p>
 </blockquote>
-<ol start="7">
-<li>根轨迹与虚轴的交点（产生无阻尼震荡&#x2F;等幅震荡点）</li>
+<ol start="7" type="1">
+<li>根轨迹与虚轴的交点（产生无阻尼震荡/等幅震荡点）</li>
 </ol>
-<p>方法一：$s&#x3D;j\omega$代入特征方程$1+G(s)H(s)&#x3D;0$计算<br>$$<br>1 + G(j\omega)H(j\omega) &#x3D; 0 \quad \Rightarrow \quad<br>\begin{cases}<br>\text{Re}[1 + G(j\omega)H(j\omega)] &#x3D; 0 \<br>\text{Im}[1 + G(j\omega)H(j\omega)] &#x3D; 0<br>\end{cases}<br>$$<br>可求得根轨迹穿越虚轴时的参数$K_c$，与根轨迹穿越虚轴的点$s&#x3D;\pm j\omega_c$</p>
+<p>方法一：<span
+class="math inline">\(s=j\omega\)</span>代入特征方程<span
+class="math inline">\(1+G(s)H(s)=0\)</span>计算 <span
+class="math display">\[
+1 + G(j\omega)H(j\omega) = 0 \quad \Rightarrow \quad
+\begin{cases}
+\text{Re}[1 + G(j\omega)H(j\omega)] = 0 \\
+\text{Im}[1 + G(j\omega)H(j\omega)] = 0
+\end{cases}
+\]</span> 可求得根轨迹穿越虚轴时的参数<span
+class="math inline">\(K_c\)</span>，与根轨迹穿越虚轴的点<span
+class="math inline">\(s=\pm j\omega_c\)</span></p>
 <p>方法二：劳斯判据全零行，求特征方程的根</p>
-<ol start="8">
+<ol start="8" type="1">
 <li>根轨迹的交叉点</li>
 </ol>
-<p>如果在根轨迹上的给定点处$W(s)$ 的$y-1$ 阶导数等于零, 则有 $y$条根轨迹分支在该点相聚又分离, 因此, 在该点处根轨迹汇合。</p>
+<p>如果在根轨迹上的给定点处<span class="math inline">\(W(s)\)</span>
+的<span class="math inline">\(y-1\)</span> 阶导数等于零, 则有 <span
+class="math inline">\(y\)</span>条根轨迹分支在该点相聚又分离, 因此,
+在该点处根轨迹汇合。</p>
 <img src="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250530223913288.png" srcset="/img/loading.gif" lazyload class="" title="交叉点">
-
-
-
 <ul>
-<li><p>进入该点的两条相邻的根轨迹夹角设定为 $λ_y$. $\lambda_y&#x3D;\pm \frac{360^{\circ}}{y}$</p>
-</li>
-<li><p>离开该点的根轨迹分支与邻近的进入该点的根轨迹分支的夹角设定为 $θ_y$. $\theta_y&#x3D;\pm \frac{180^{\circ}}{y}$</p>
-</li>
+<li><p>进入该点的两条相邻的根轨迹夹角设定为 <span
+class="math inline">\(λ_y\)</span>. <span
+class="math inline">\(\lambda_y=\pm
+\frac{360^{\circ}}{y}\)</span></p></li>
+<li><p>离开该点的根轨迹分支与邻近的进入该点的根轨迹分支的夹角设定为
+<span class="math inline">\(θ_y\)</span>. <span
+class="math inline">\(\theta_y=\pm
+\frac{180^{\circ}}{y}\)</span></p></li>
 </ul>
-<ol start="9">
-<li>系统根之和的守恒（$n-2&gt;&#x3D;w$时）</li>
+<ol start="9" type="1">
+<li>系统根之和的守恒（<span
+class="math inline">\(n-2&gt;=w\)</span>时）</li>
 </ol>
-<p>$$<br>\sum_{j&#x3D;1}^{n} p_j &#x3D; \sum_{j&#x3D;1}^{n} \lambda_j<br>$$</p>
-<p>对于$w ≤ n-2$的开环传递函数，当$K$由$0$变化到$\infty$时, <strong>闭环特征方程的根之和</strong> 等于 <strong>开环极点之和</strong></p>
-<h3 id="5-2-3-步骤"><a href="#5-2-3-步骤" class="headerlink" title="5.2.3 步骤"></a>5.2.3 步骤</h3><ol>
-<li><p>找出开环极点$p_i$和开环零点$z_j$，确定根轨迹分支数</p>
-</li>
-<li><p>确定实轴上的根轨迹（s右侧实零点数与实极点数之和是<strong>奇数</strong>）</p>
-</li>
-<li><p>计算渐近线位置&#x2F;夹角</p>
-</li>
-<li><p>计算分离点、分离角</p>
-</li>
-<li><p>计算出射角、入射角、根轨迹与虚轴的交点</p>
-</li>
+<p><span class="math display">\[
+\sum_{j=1}^{n} p_j = \sum_{j=1}^{n} \lambda_j
+\]</span></p>
+<p>对于<span class="math inline">\(w ≤
+n-2\)</span>的开环传递函数，当<span
+class="math inline">\(K\)</span>由<span
+class="math inline">\(0\)</span>变化到<span
+class="math inline">\(\infty\)</span>时,
+<strong>闭环特征方程的根之和</strong> 等于
+<strong>开环极点之和</strong></p>
+<h3 id="步骤">5.2.3 步骤</h3>
+<ol type="1">
+<li><p>找出开环极点<span
+class="math inline">\(p_i\)</span>和开环零点<span
+class="math inline">\(z_j\)</span>，确定根轨迹分支数</p></li>
+<li><p>确定实轴上的根轨迹（s右侧实零点数与实极点数之和是<strong>奇数</strong>）</p></li>
+<li><p>计算渐近线位置/夹角</p></li>
+<li><p>计算分离点、分离角</p></li>
+<li><p>计算出射角、入射角、根轨迹与虚轴的交点</p></li>
 </ol>
-<h3 id="5-2-4-有关根轨迹的几个结论："><a href="#5-2-4-有关根轨迹的几个结论：" class="headerlink" title="5.2.4 有关根轨迹的几个结论："></a>5.2.4 有关根轨迹的几个结论：</h3><ul>
-<li>具有相同阻尼比的特征根$-\zeta\omega_n \pm j\omega_n\sqrt{1-\zeta^2}$位于一条直线上，这条直线与负实轴的<strong>夹角</strong>满足$\eta&#x3D;\cos^{-1}\zeta$（夹角余弦值&#x3D;阻尼比），特征根到原点的距离（线段长度）为$\omega_n$</li>
+<h3 id="有关根轨迹的几个结论">5.2.4 有关根轨迹的几个结论：</h3>
+<ul>
+<li>具有相同阻尼比的特征根<span class="math inline">\(-\zeta\omega_n \pm
+j\omega_n\sqrt{1-\zeta^2}\)</span>位于一条直线上，这条直线与负实轴的<strong>夹角</strong>满足<span
+class="math inline">\(\eta=\cos^{-1}\zeta\)</span>（夹角余弦值=阻尼比），特征根到原点的距离（线段长度）为<span
+class="math inline">\(\omega_n\)</span></li>
 </ul>
 <img src="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250530160655483.png" srcset="/img/loading.gif" lazyload class="" title="阻尼比与极点位置的关系图">
-
-
-
 <ul>
-<li><p>给系统增加合适的开环零点：根轨迹向左弯曲, 系统更加稳定，过渡过程加快（稳态时间$t_s$减少）</p>
-<p>给系统增加合适的开环极点：根轨迹向右弯曲，容易使系统不稳定，过渡过程变缓</p>
-</li>
+<li><p>给系统增加合适的开环零点：根轨迹向左弯曲,
+系统更加稳定，过渡过程加快（稳态时间<span
+class="math inline">\(t_s\)</span>减少）</p>
+<p>给系统增加合适的开环极点：根轨迹向右弯曲，容易使系统不稳定，过渡过程变缓</p></li>
 </ul>
 <img src="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250530231308193.png" srcset="/img/loading.gif" lazyload class="" title="向左弯曲">
 <img src="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250530231318306.png" srcset="/img/loading.gif" lazyload class="" title="向右弯曲">
 <ul>
 <li>由<strong>两个开环极点</strong>（实极点或复数极点）和<strong>一个开环实零点</strong>组成的二阶系统，只要<strong>实零点没有位于两个实极点之间</strong>，当开环根轨迹增益由零变到无穷大时，复平面上的闭环根轨迹，一定是以<strong>实零点为圆心</strong>，以<strong>实零点到分离点的距离</strong>为半径的一个圆（当开环极点为两个实极点时）或圆的一部分（当开环极点为一对共轭复数极点时）。</li>
 </ul>
-<h2 id="5-3-广义根轨迹"><a href="#5-3-广义根轨迹" class="headerlink" title="5.3 广义根轨迹"></a>5.3 广义根轨迹</h2><p>广义根轨迹有三种：参数根轨迹、正反馈系统根轨迹、纯滞后系统根轨迹</p>
-<h3 id="5-3-1-参数根轨迹"><a href="#5-3-1-参数根轨迹" class="headerlink" title="5.3.1 参数根轨迹"></a>5.3.1 参数根轨迹</h3><p>定义：闭环系统特征方程的根是其他参数（非根轨迹增益）的函数，例如：<br>$$<br>G(s)H(s)&#x3D;\frac{2}{s(Ts+1)(s+1)}<br>$$<br>分析方法：根据$1+G(s)H(s)&#x3D;0$，整理成等效单位反馈系统的等效开环传递函数$[G(s)H(s)]_e&#x3D;A\frac{P(s)}{Q(s)}&#x3D;-1$，使关注的参数成为根轨迹增益</p>
+<h2 id="广义根轨迹">5.3 广义根轨迹</h2>
+<p>广义根轨迹有三种：参数根轨迹、正反馈系统根轨迹、纯滞后系统根轨迹</p>
+<h3 id="参数根轨迹">5.3.1 参数根轨迹</h3>
+<p>定义：闭环系统特征方程的根是其他参数（非根轨迹增益）的函数，例如：
+<span class="math display">\[
+G(s)H(s)=\frac{2}{s(Ts+1)(s+1)}
+\]</span> 分析方法：根据<span
+class="math inline">\(1+G(s)H(s)=0\)</span>，整理成等效单位反馈系统的等效开环传递函数<span
+class="math inline">\([G(s)H(s)]_e=A\frac{P(s)}{Q(s)}=-1\)</span>，使关注的参数成为根轨迹增益</p>
 <p>注意：这里的“等效”仅是闭环<strong>极点</strong>与实际的传递函数相同</p>
-<p>通常, 当极点数$n$小于零点数$w$时,可以用$1&#x2F;T$（根轨迹增益的倒数）作为绘制根轨迹时的变化参数。</p>
-<h3 id="5-3-2-正反馈根轨迹"><a href="#5-3-2-正反馈根轨迹" class="headerlink" title="5.3.2 正反馈根轨迹"></a>5.3.2 正反馈根轨迹</h3><ol>
+<p>通常, 当极点数<span class="math inline">\(n\)</span>小于零点数<span
+class="math inline">\(w\)</span>时,可以用<span
+class="math inline">\(1/T\)</span>（根轨迹增益的倒数）作为绘制根轨迹时的变化参数。</p>
+<h3 id="正反馈根轨迹">5.3.2 正反馈根轨迹</h3>
+<ol type="1">
 <li>类型：</li>
 </ol>
 <ul>
-<li><p>如果系统是正反馈系统，特征方程为$1-G(s)H(s)&#x3D;0$，此时的根轨迹为正反馈根轨迹</p>
-</li>
-<li><p>系统是负反馈系统，特征方程为$1+G(s)H(s)&#x3D;0$，但$K&lt;0$，根轨迹为正反馈根轨迹</p>
-</li>
+<li><p>如果系统是正反馈系统，特征方程为<span
+class="math inline">\(1-G(s)H(s)=0\)</span>，此时的根轨迹为正反馈根轨迹</p></li>
+<li><p>系统是负反馈系统，特征方程为<span
+class="math inline">\(1+G(s)H(s)=0\)</span>，但<span
+class="math inline">\(K&lt;0\)</span>，根轨迹为正反馈根轨迹</p></li>
 </ul>
-<p>与负反馈系统相比，相角条件有所改变：$\angle G(s)H(s)&#x3D;0^{\circ}+k360^{\circ}$，因此正反馈根轨迹被称为$0^{\circ}$根轨迹或付参数根轨迹</p>
-<ol start="2">
+<p>与负反馈系统相比，相角条件有所改变：<span
+class="math inline">\(\angle
+G(s)H(s)=0^{\circ}+k360^{\circ}\)</span>，因此正反馈根轨迹被称为<span
+class="math inline">\(0^{\circ}\)</span>根轨迹或付参数根轨迹</p>
+<ol start="2" type="1">
 <li>绘制法则</li>
 </ol>
 <p>相比于负反馈根轨迹，绘制法则有三点不同：</p>
-<p>（1）渐近线：与实轴的交点不变；与实轴的夹角变为$\gamma&#x3D;\frac{2k\pi}{n-w}$（$n&gt;w$）</p>
+<p>（1）渐近线：与实轴的交点不变；与实轴的夹角变为<span
+class="math inline">\(\gamma=\frac{2k\pi}{n-w}\)</span>（<span
+class="math inline">\(n&gt;w\)</span>）</p>
 <p>（2）实轴上的根轨迹：s右侧的实数零极点数是偶数个，则该点在根轨迹上</p>
 <p>（3）出射角与入射角</p>
-<p>出射角：<br>$$<br>\phi_{p_d} &#x3D; \frac{2k\pi + \sum_{j&#x3D;1}^{w} \angle(p_d - z_j) - \sum_{\substack{i&#x3D;1 \ p_i \neq p_d}}^{n} \angle(p_d - p_i)}{q} \quad k \in {0, 1, \cdots, q-1}<br>$$<br>入射角：<br>$$<br>\psi_{z_d} &#x3D; \frac{2k\pi + \sum_{i&#x3D;1}^{n} \angle(z_d - p_i) - \sum_{\substack{j&#x3D;1 \ z_j \neq z_d}}^{w} \angle(z_d - z_j)}{q} \quad k \in {0, 1, \cdots, q-1}<br>$$</p>
-<h3 id="5-3-3-纯滞后系统根轨迹"><a href="#5-3-3-纯滞后系统根轨迹" class="headerlink" title="5.3.3 纯滞后系统根轨迹"></a>5.3.3 纯滞后系统根轨迹</h3><p>典型形式：$G(s)H(s)&#x3D;K\frac{A(s)}{B(s)}e^{-\tau s}$，特征方程 $1+G_1(s)H_1(s)e^{-\tau s}&#x3D;0$</p>
+<p>出射角： <span class="math display">\[
+\phi_{p_d} = \frac{2k\pi + \sum_{j=1}^{w} \angle(p_d - z_j) -
+\sum_{\substack{i=1 \\ p_i \neq p_d}}^{n} \angle(p_d - p_i)}{q} \quad k
+\in \{0, 1, \cdots, q-1\}
+\]</span> 入射角： <span class="math display">\[
+\psi_{z_d} = \frac{2k\pi + \sum_{i=1}^{n} \angle(z_d - p_i) -
+\sum_{\substack{j=1 \\ z_j \neq z_d}}^{w} \angle(z_d - z_j)}{q} \quad k
+\in \{0, 1, \cdots, q-1\}
+\]</span></p>
+<h3 id="纯滞后系统根轨迹">5.3.3 纯滞后系统根轨迹</h3>
+<p>典型形式：<span
+class="math inline">\(G(s)H(s)=K\frac{A(s)}{B(s)}e^{-\tau
+s}\)</span>，特征方程 <span class="math inline">\(1+G_1(s)H_1(s)e^{-\tau
+s}=0\)</span></p>
 <p>通过幅值条件和相角条件，可近似勾勒出根轨迹</p>
-<p>Pade近似：$e^{-\tau s}&#x3D;-\frac{s-\frac{2}{\tau}}{s+\frac{2}{\tau}}$</p>
-<h2 id="5-4-基于根轨迹的系统性能分析"><a href="#5-4-基于根轨迹的系统性能分析" class="headerlink" title="5.4 基于根轨迹的系统性能分析"></a>5.4 基于根轨迹的系统性能分析</h2><ul>
-<li>主导极点特征：1.附近无其他零极点 2.距虚轴较近(实部绝对值小于其它极点实部绝对值的1&#x2F;5)</li>
+<p>Pade近似：<span class="math inline">\(e^{-\tau
+s}=-\frac{s-\frac{2}{\tau}}{s+\frac{2}{\tau}}\)</span></p>
+<h2 id="基于根轨迹的系统性能分析">5.4 基于根轨迹的系统性能分析</h2>
+<ul>
+<li>主导极点特征：1.附近无其他零极点
+2.距虚轴较近(实部绝对值小于其它极点实部绝对值的1/5)</li>
 <li>主导根轨迹分支：根轨迹中最接近于虚轴的1或2条根轨迹分支</li>
 </ul>
 <p>系统性能分析时主要考虑主导极点。</p>
 <p>核心步骤:</p>
-<ol>
-<li>根据要求的动态性能指标：调节时间$t_s$，超调量$\sigma$%，上升时间$t_r$，峰值时间$t_p$</li>
-<li>通过公式计算阻尼比$\zeta$，自然频率$\omega_n$，振荡频率$\omega_d$…..</li>
-<li>在主导根轨迹分支上选择合适的主导极点（例如已知阻尼比，可以使用结论：夹角余弦值&#x3D;阻尼比）</li>
-<li>根据主导极点求根轨迹增益$K$，同时可确定其他根（可以直接求，也可以用法则9【$n-2\geq w$时开环极点之和&#x3D;闭环特征根之和】求解）</li>
+<ol type="1">
+<li>根据要求的动态性能指标：调节时间<span
+class="math inline">\(t_s\)</span>，超调量<span
+class="math inline">\(\sigma\)</span>%，上升时间<span
+class="math inline">\(t_r\)</span>，峰值时间<span
+class="math inline">\(t_p\)</span></li>
+<li>通过公式计算阻尼比<span
+class="math inline">\(\zeta\)</span>，自然频率<span
+class="math inline">\(\omega_n\)</span>，振荡频率<span
+class="math inline">\(\omega_d\)</span>.....</li>
+<li>在主导根轨迹分支上选择合适的主导极点（例如已知阻尼比，可以使用结论：夹角余弦值=阻尼比）</li>
+<li>根据主导极点求根轨迹增益<span
+class="math inline">\(K\)</span>，同时可确定其他根（可以直接求，也可以用法则9【<span
+class="math inline">\(n-2\geq
+w\)</span>时开环极点之和=闭环特征根之和】求解）</li>
 </ol>
-<h2 id="5-5-系统补偿器设计"><a href="#5-5-系统补偿器设计" class="headerlink" title="5.5 系统补偿器设计"></a>5.5 系统补偿器设计</h2><p>补偿器设计方式：串联补偿、反馈补偿、局部反馈补偿</p>
+<h2 id="系统补偿器设计">5.5 系统补偿器设计</h2>
+<p>补偿器设计方式：串联补偿、反馈补偿、局部反馈补偿</p>
 <img src="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250531111250471.png" srcset="/img/loading.gif" lazyload class="" title="串联补偿">
-
-
-
 <p>常见结构对瞬态相应和稳态响应的影响</p>
 <img src="/2025/05/26/%E3%80%8A%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250531111343534.png" srcset="/img/loading.gif" lazyload class="" title="补偿器影响">
+<p>零点的幅值小于极点的幅值时，称为超前（lead）控制器.。
+否则，称为滞后（lag）控制器</p>
+<h1 id="第六章-频率特性分析法">第六章 频率特性分析法</h1>
+<h2 id="概述">6.1 概述</h2>
+<p>正弦输入下LTI系统的全响应、自由响应和强迫响应：</p>
+<p>某典型输入<span
+class="math inline">\(u(t)\)</span>和一个LTI系统满足下列2个<strong>模态不重叠条件</strong>之一：</p>
+<ul>
+<li><p><span class="math inline">\(u(t)=A_1\sin(\omega_0 t) \cdot
+u_{-1}(t)\)</span> ，<span class="math inline">\(G(s)\)</span>不含<span
+class="math inline">\(\frac{1}{s^2 + \omega_0^2}\)</span></p></li>
+<li><p><span
+class="math inline">\(u(t)\)</span>为阶跃、斜坡或抛物线输入，<span
+class="math inline">\(G(s)\)</span>不含<span
+class="math inline">\(\frac{1}{s}\)</span></p></li>
+</ul>
+<p>任给初始条件，对<span class="math inline">\(G(s)\)</span>输入<span
+class="math inline">\(u(t)\)</span>，可得到相应的全响应<span
+class="math inline">\(y(t)\)</span>，则<span
+class="math inline">\(y(t)=y_{tr}(t)+y_{ss}(t)\)</span></p>
+<p>自由响应<span class="math inline">\(y_{tr}(t)\)</span>：<span
+class="math inline">\(y(t)\)</span>中由<span
+class="math inline">\(G(s)\)</span>模态组成的部分</p>
+<p>强迫响应<span class="math inline">\(y_{ss}(t)\)</span>：<span
+class="math inline">\(y(t)\)</span>中由非<span
+class="math inline">\(G(s)\)</span>模态组成的部分</p>
+<p>输入正弦信号，输出可由公式计算</p>
+<figure>
+<img src="《自动控制原理》复习笔记/image-20250605100314216.png" srcset="/img/loading.gif" lazyload
+alt="image-20250605100314216" />
+<figcaption aria-hidden="true">image-20250605100314216</figcaption>
+</figure>
+<p>系统幅频特性<span
+class="math inline">\(M(\omega)\)</span>，相频特性<span
+class="math inline">\(\phi(\omega)\)</span>，复数值函数<span
+class="math inline">\(M(\omega)e^{j\phi(\omega)}\)</span>称系统的频率特性</p>
+<p>分析法得到频率特性<span
+class="math inline">\(M(\omega)e^{j\phi(\omega)}=
+G(j\omega)=G(s)|_{s=j\omega}\)</span></p>
+<p>最终的公式：<span
+class="math inline">\(\frac{A_2}{A_1}=|G(j\omega)|,\phi(\omega)=\angle
+G(j\omega)\)</span>（这里指的强迫响应，强迫响应为同频率的正弦信号，幅值增大<span
+class="math inline">\(|G(j\omega)|\)</span>，相位滞后<span
+class="math inline">\(\angle G(j\omega)\)</span>）</p>
+<p>频率特性曲线：Bode图（对数频率特性曲线）、Nyquist图（极坐标图、幅相曲线）</p>
+<p><strong>Bode图：</strong></p>
+<p>对数幅频：传递函数<span
+class="math inline">\(G(j\omega)\)</span>的幅值的对数（幅频特性）</p>
+<p>​ 纵坐标：以分贝来表示：<span class="math inline">\(Lm =
+20\lg|G(j\omega)|\)</span> dB</p>
+<p>​ 横坐标：按<span
+class="math inline">\(\lg\omega\)</span>分度，单位为<span
+class="math inline">\(rad/s\)</span></p>
+<p>对数相频：纵坐标：按<span
+class="math inline">\(\phi(\omega)\)</span>线性分度，单位为度</p>
+<figure>
+<img src="《自动控制原理》复习笔记/image-20250605104507382.png" srcset="/img/loading.gif" lazyload
+alt="image-20250605104507382" />
+<figcaption aria-hidden="true">image-20250605104507382</figcaption>
+</figure>
 
-
-
-<p>零点的幅值小于极点的幅值时，称为超前（lead）控制器.。 否则，称为滞后（lag）控制器</p>
-<h1 id="第六章-频率特性分析法"><a href="#第六章-频率特性分析法" class="headerlink" title="第六章 频率特性分析法"></a>第六章 频率特性分析法</h1>
                 
               </div>
             
@@ -724,7 +1011,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="print-no-link">#复习笔记</a>
+        <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
       
     </div>
   
